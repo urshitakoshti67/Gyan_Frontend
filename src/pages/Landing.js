@@ -431,6 +431,7 @@ function Landing() {
           /> */}
             {internship.map((intern, index) => (
               <InternshipCard key={index}
+                id={intern.id}
                 internshipFees={intern.fees}
                 internshipTitle={intern.Internship_title}
                 internshipDuration={intern.duration_weeks}
