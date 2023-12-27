@@ -58,7 +58,7 @@ const ChangePassword = () => {
                     <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>New Password</Heading>
                 </Box>
                 <Input
-                    placeholder="First Name"
+                    placeholder="New Password"
                     bgColor="white"
                     h="10"
                     mt={'1'}
@@ -76,7 +76,7 @@ const ChangePassword = () => {
                     <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Confirm New Password</Heading>
                 </Box>
                 <Input
-                    placeholder="Last Name"
+                    placeholder="Confirm New Password"
                     bgColor="white"
                     h="10"
                     mt={'1'}
@@ -90,7 +90,7 @@ const ChangePassword = () => {
                     value={password2}
                     onChange={(e) => setPassword2(e.target.value)}
                 />
-                <Button mt={10} bg={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}} onClick={changePassword}>
+                <Button mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} onClick={changePassword}>
                     Update
                 </Button>
             </Box>
