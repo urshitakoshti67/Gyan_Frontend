@@ -81,7 +81,7 @@ const Login = () => {
           />
         </Box>
 
-        <Box w='550px' h='550px' padding={'20px'} backgroundColor={'#E4FFFF'} borderRadius={'25px'}>
+        <Box padding={'20px'} backgroundColor={'#E4FFFF'} borderRadius={'25px'}>
           <Heading pt={8} textAlign={'left'}><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#2F327D">Welcome to </Heading><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#00CBB8">Gyan@Aim4u</Heading></Heading>
           <HStack spacing='4px'>
             <Heading color={'#F48C06'} size={{ base: "base", md: "sm", lg: "sm" }}>Lets get you started</Heading>
@@ -204,13 +204,13 @@ const Login = () => {
           >
             Login
           </Button>
-          <Text textAlign={'center'} mt='2%' fontSize='18px' fontWeight='bold'>
+          {/* <Text textAlign={'center'} mt='2%' fontSize='18px' fontWeight='bold'>
             or
           </Text>
 
           <button type="button" class="login-with-google-btn" >
             Sign in with Google
-          </button>
+          </button> */}
           <Text textAlign={'center'} mt='2%' fontSize='14px' fontWeight='bold'>
             Don't have an Account? <Link to='/register'><span style={{ color: '#007BFF' }}>Register</span></Link>
           </Text>
