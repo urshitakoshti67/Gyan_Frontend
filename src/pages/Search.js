@@ -99,21 +99,21 @@ const Search = () => {
         <TabList>
           <Tab
             onClick={() => handleTabChange('title')}
-            _selected={{ bg: '#49BBBD', color: 'white' }}
+            _selected={{ bg: '#007BFF', color: 'white' }}
             _focus={{ outline: 'none' }}
           >
             Title
           </Tab>
           <Tab
             onClick={() => handleTabChange('duration')}
-            _selected={{ bg: '#49BBBD', color: 'white' }}
+            _selected={{ bg: '#007BFF', color: 'white' }}
             _focus={{ outline: 'none' }}
           >
             Duration
           </Tab>
           <Tab
             onClick={() => handleTabChange('skill')}
-            _selected={{ bg: '#49BBBD', color: 'white' }}
+            _selected={{ bg: '#007BFF', color: 'white' }}
             _focus={{ outline: 'none' }}
           >
             Skill
@@ -132,7 +132,7 @@ const Search = () => {
               <option>Flutter Development</option>
               <option>Android Development</option>
             </Select>
-            <Button onClick={searchByTitle} ml={5} bg={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}}>Search</Button>
+            <Button onClick={searchByTitle} ml={5} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Search</Button>
           </TabPanel>
           <TabPanel w={'full'} display={'flex'} justifyContent={'center'}>
             <Select
@@ -146,7 +146,7 @@ const Search = () => {
               <option>10 weeks</option>
               <option>12 weeks</option>
             </Select>
-            <Button onClick={searchByDuration} ml={5} bg={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}}>Search</Button>
+            <Button onClick={searchByDuration} ml={5} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Search</Button>
           </TabPanel>
           <TabPanel w={'full'} display={'flex'} justifyContent={'center'}>
             <Select
@@ -166,7 +166,7 @@ const Search = () => {
               <option>Flutter</option>
               <option>Android Studio</option>
             </Select>
-            <Button onClick={searchBySkill} ml={5} bg={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}}>Search</Button>
+            <Button onClick={searchBySkill} ml={5} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Search</Button>
           </TabPanel>
         </TabPanels>
       </Tabs>

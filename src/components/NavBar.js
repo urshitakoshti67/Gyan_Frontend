@@ -61,7 +61,7 @@ const Navbar = ({ isAdmin }) => {
       <Spacer />
       {/* {isAuthenticated && */}
       <Flex direction={['column', 'column', 'row', 'row']} align={['center', 'center', 'center', 'center']}>
-        <Flex direction={'row'} p={['2', '2', '2', '3']} my={['3', '3', 'auto', 'auto']} fontSize={['xl', 'xl', '2xl', '2xl']} color='#5B5B5B'>
+        <Flex direction={'row'} p={['2', '2', '2', '3']} my={['3', '3', 'auto', 'auto']} fontSize={['xl', 'xl', '2xl', '2xl']} color='#007BFF'>
           <Avatar bg='teal.500' mb='2' ml='8' mr='3' />
           <Menu>
             <MenuButton as={Button} color={'white'} marginTop={'4%'} fontSize={['xl', 'xl', '2xl', '2xl']} backgroundColor={'transparent'} rightIcon={<ChevronDownIcon />} _hover={{ bg: 'transparent', color: 'black' }}>

@@ -9,7 +9,7 @@ import axios from 'axios';
 import { wrap } from 'framer-motion'
 import img1 from "../images/rectangle-19@2x.png"
 import img2 from "../images/rectangle-21@2x.png"
-import img3 from "../images/f22.png"
+import img3 from "../images/homepage.png"
 import img4 from "../images/diploma@2x.png"
 import img5 from "../images/paper-plane@2x.png"
 import img6 from "../images/project-management@2x.png"
@@ -128,7 +128,7 @@ function Landing() {
 
         <Navbar isAdmin={isAdmin} />
       ) : (
-        <Box bg="#49BBBD" pt={5} pl={0} width="100%">
+        <Box bg="#007BFF" pt={5} pl={0} width="100%">
           <Flex as="nav">
             <Box></Box>
             <Spacer />
@@ -156,7 +156,7 @@ function Landing() {
         </Box>
       )}
 
-<div >
+      <div >
         <div className="container">
           <Image src={img3} alt="Norway" object-fit="cover" w='full' />
           <div className="text-block">
@@ -164,7 +164,7 @@ function Landing() {
             <Heading pb="1vw" textAlign="center" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }} marginTop={'2%'}>Join Us And Shape Tomorrow</Heading>
             <Heading textAlign="center" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "lg", "2xl": "2xl" }} marginLeft={'19%'}><Heading as="span" color="#F48C06" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>Internships </Heading><Heading as="span" color="white" size={{ base: "base", sam: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>That Make A <br /> Difference</Heading></Heading>
             <Text pt="1vw" pb="1vw" textAlign={'center'} fontSize={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>Being an Intern is much easier</Text>
-            <Button marginLeft={'45%'} size={{ base: "sm", md: "md", lg: "lg" }} backgroundColor={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}}>Apply Now</Button>
+            <Button marginLeft={'45%'} size={{ base: "sm", md: "md", lg: "lg" }} backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Apply Now</Button>
           </div>
         </div>
       </div>
@@ -200,7 +200,7 @@ function Landing() {
                    <Heading size={{ base: "base", md: "lg", lg: "3xl" }} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>50</Heading>
                    <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">Top Universities</Text>
                 </Box> */}
-         <Box>
+          <Box>
             <Heading
               size={{ base: "base", md: "lg", lg: "3xl" }}
               style={{
@@ -301,7 +301,7 @@ function Landing() {
                   <Text color="white" fontSize={["base", "sm", "md", "xl"]}>New to Our Page?</Text>
 
 
-                  <Button size={{ base: "sm", md: "sm", lg: "md" }} backgroundColor={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}}>Register Now</Button>
+                  <Button size={{ base: "sm", md: "sm", lg: "md" }} backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Register Now</Button>
 
                 </Box>
               </div>
@@ -314,7 +314,7 @@ function Landing() {
                   <Text color="white" fontSize={["base", "sm", "md", "xl"]}>Latest Internships</Text>
 
 
-                  <Button size={{ base: "sm", md: "sm", lg: "md" }} variant="solid" backgroundColor={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}}>Apply Now</Button>
+                  <Button size={{ base: "sm", md: "sm", lg: "md" }} variant="solid" backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Apply Now</Button>
 
                 </Box>
               </div>
@@ -330,7 +330,7 @@ function Landing() {
 
       <div>
         <Box fontSize={["sm", "md", "lg", "xl"]} pt="4%" pl={'4'}>
-          <Heading  textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">Benefits Of Joining Our </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Internship</Heading></Heading>
+          <Heading textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">Benefits Of Joining Our </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Internship</Heading></Heading>
           <Center>
             <Grid pt="5vw" h='400px'
               templateRows={{ base: "repeat(4, 1fr)", sm: "repeat(4, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(2, 1fr)", xl: "repeat(2, 1fr)" }}
@@ -401,7 +401,7 @@ function Landing() {
       </div>
 
       <Box pt={{ base: "35%", md: "35%", lg: "13%" }}>
-        <Heading pt={10}  textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">All Our </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Internships</Heading></Heading>
+        <Heading pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">All Our </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Internships</Heading></Heading>
 
         <div className="scroll">
           <Carousel
