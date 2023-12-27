@@ -76,10 +76,13 @@ const Navbar = ({ isAdmin }) => {
               {!isAdmin && <MenuItem onClick={async () => {
                 try {
                   const accessToken = window.sessionStorage.getItem('accessToken');
+                  const formData = new FormData();
+                  formData.append('user', userId);
                   const { data } = await axios.post(`http://127.0.0.1:8000/view-user-resume/`,
-                    { user: userId },
+                    formData,
                     {
                       headers: {
+                        'Content-Type': 'multipart/form-data',
                         'Authorization': `Bearer ${accessToken}`,
                       }
                     });
