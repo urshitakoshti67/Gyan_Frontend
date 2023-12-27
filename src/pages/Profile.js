@@ -137,41 +137,6 @@ const Profile = () => {
       }
       const accessToken = window.sessionStorage.getItem('accessToken');
 
-      //resume upload
-      if (resume) {
-        console.log("Selected file:", resume);
-        console.log("user", userId);
-        const formData = new FormData();
-        formData.append('user_resume', resume);
-        formData.append('user', userId);
-        try {
-          const response = await axios.post(`http://127.0.0.1:8000/user-resume/`, formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-              'Authorization': `Bearer ${accessToken}`
-            }
-          });
-
-          toast({
-            title: 'Resume Uploaded Successfully',
-            description: 'Resume has been updated',
-            status: 'success',
-            duration: 5000,
-            isClosable: true,
-          });
-
-        } catch (error) {
-          toast({
-            title: 'Resume Upload Failed',
-            description: 'Something went wrong',
-            status: 'error',
-            duration: 5000,
-            isClosable: true,
-          });
-          console.error("File upload failed:", error);
-        }
-      }
-
       //user information update
       const { data } = await axios.put(`http://127.0.0.1:8000/user-data/`,
         { user: userId, phone_number: phoneNumber, skills: JSON.stringify(skills), education: JSON.stringify(education) },
@@ -202,12 +167,56 @@ const Profile = () => {
 
   }
 
+  const uploadResume = async () => {
+    //resume upload
+    if (resume) {
+      const accessToken = window.sessionStorage.getItem('accessToken');
+      console.log("Selected file:", resume);
+      console.log("user", userId);
+      const formData = new FormData();
+      formData.append('user_resume', resume);
+      formData.append('user', userId);
+      try {
+        const response = await axios.post(`http://127.0.0.1:8000/user-resume/`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${accessToken}`
+          }
+        });
+
+        toast({
+          title: 'Resume Uploaded Successfully',
+          description: 'Resume has been updated',
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+
+      } catch (error) {
+        toast({
+          title: 'Resume Upload Failed',
+          description: 'Something went wrong',
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        });
+        console.error("File upload failed:", error);
+      }
+    }
+    else {
+      toast({
+        title: 'Empty Selection',
+        description: 'Please Select a File',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  }
+
   return (
     <Box>
       <NavBar isAdmin={isAdmin} />
-      {/* <Box display={'flex'} justifyContent={'center'} mb={10}>
-        <Button mr={10} onClick={downloadResume}>My Resume</Button>
-      </Box> */}
       <Box bg={'#E4FFFF'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} w={['full', '50%']} m={'auto'} borderRadius={['0', '20']} pt={5} pb={10} mb={10}>
         <Heading>User Information</Heading>
         <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
@@ -262,24 +271,6 @@ const Profile = () => {
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
         <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
-          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Resume</Heading>
-        </Box>
-        <Input
-          placeholder="Resume"
-          bgColor="white"
-          h="10"
-          mt={'1'}
-          w={['80%', '60%']}
-          fontSize="md"
-          size="sm"
-          borderRadius="100"
-          borderWidth="medium"
-          borderColor="#49BBBD"
-          type='file'
-          accept='.pdf,.doc,.docx'
-          onChange={handleFileChange}
-        />
-        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
           <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1} mb={1}>Skills</Heading>
           {skills.map((sk, index) => {
             return <Box key={index} display={'flex'}>
@@ -303,7 +294,7 @@ const Profile = () => {
             value={singleSkill}
             onChange={(e) => setSingleSkill(e.target.value)}
           />
-          <Button bg={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}} ml={2} onClick={() => {
+          <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
             let temp = skills;
             temp.push(singleSkill);
             setSkills(temp);
@@ -334,15 +325,38 @@ const Profile = () => {
             value={edu}
             onChange={(e) => setEdu(e.target.value)}
           />
-          <Button bg={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}} ml={2} onClick={() => {
+          <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
             let temp = education;
             temp.push(edu);
             setEducation(temp);
             setEdu('')
           }}>Add</Button>
         </Box>
-        <Button onClick={handleUpdate} mt={10} bg={'#007BFF'} color={'white'} _hover={{bg:'#49BBBD'}}>
+        <Button onClick={handleUpdate} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
           Update
+        </Button>
+      </Box>
+      <Box bg={'#E4FFFF'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} w={['full', '50%']} m={'auto'} borderRadius={['0', '20']} pt={5} pb={10} mb={10}>
+        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
+          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Resume</Heading>
+        </Box>
+        <Input
+          placeholder="Resume"
+          bgColor="white"
+          h="10"
+          mt={'1'}
+          w={['80%', '60%']}
+          fontSize="md"
+          size="sm"
+          borderRadius="100"
+          borderWidth="medium"
+          borderColor="#49BBBD"
+          type='file'
+          accept='.pdf,.doc,.docx'
+          onChange={handleFileChange}
+        />
+        <Button onClick={uploadResume} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
+          Upload Resume
         </Button>
       </Box>
     </Box>
