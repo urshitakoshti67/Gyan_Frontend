@@ -26,7 +26,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const { isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated } = useSelector((state) => state.user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ const Login = () => {
 
   return (
     <div>
-      <NavBar name={'Login'}/>
+      {isAuthenticated && <NavBar name={'Login'} />}
       <HStack spacing='80px' paddingTop='50' ml='100'>
         <Box w='700px' h='450px' paddingTop='60px'>
           <Image
@@ -82,9 +82,9 @@ const Login = () => {
         </Box>
 
         <Box w='550px' h='550px' padding={'20px'} backgroundColor={'#E4FFFF'} borderRadius={'25px'}>
-        <Heading pt={8} textAlign={'left'}><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#2F327D">Welcome to </Heading><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#00CBB8">Gyan@Aim4u</Heading></Heading>
+          <Heading pt={8} textAlign={'left'}><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#2F327D">Welcome to </Heading><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#00CBB8">Gyan@Aim4u</Heading></Heading>
           <HStack spacing='4px'>
-          <Heading color={'#F48C06'} size={{ base: "base", md: "sm", lg: "sm" }}>Lets get you started</Heading>
+            <Heading color={'#F48C06'} size={{ base: "base", md: "sm", lg: "sm" }}>Lets get you started</Heading>
             {/* <Link to='/login'>
               <Box w='110px' h='40px' borderRadius='25px' marginRight='10px'>
                 <Button
@@ -189,7 +189,7 @@ const Login = () => {
             h='40px'
             borderRadius='25px'
             bg='#007BFF'
-              color='white'
+            color='white'
             _hover={{
               bg: 'rgba(45, 240, 228, 1)',
               cursor: 'pointer',
@@ -214,7 +214,7 @@ const Login = () => {
           <Text textAlign={'center'} mt='2%' fontSize='14px' fontWeight='bold'>
             Don't have an Account? <Link to='/register'><span style={{ color: '#007BFF' }}>Register</span></Link>
           </Text>
-        </Box>  
+        </Box>
       </HStack>
     </div>
   );

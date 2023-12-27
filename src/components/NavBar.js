@@ -52,9 +52,9 @@ const Navbar = ({ isAdmin }) => {
         <Box {...linkStyles}>
           <Link to="/search" className="nav-link">Search</Link>
         </Box>
-        <Box {...linkStyles}>
+        {/* <Box {...linkStyles}>
           <Link to="/blog" className="nav-link">Blog</Link>
-        </Box>
+        </Box> */}
 
       </Flex>
 

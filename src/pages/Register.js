@@ -27,7 +27,7 @@ const Register = () => {
   const [password2, setPassword2] = useState('');
   const navigate = useNavigate();
   const toast = useToast();
-  // const { isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated } = useSelector((state) => state.user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,7 +64,7 @@ const Register = () => {
 
   return (
     <div>
-      <NavBar name={'Register'}/>
+      {isAuthenticated && <NavBar name={'Register'} />}
       <HStack spacing='80px' paddingTop='50' ml='100'>
         <Box w='700px' h='450px' paddingTop='60px'>
           <img
