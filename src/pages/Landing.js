@@ -129,17 +129,17 @@ function Landing() {
 
         <Navbar isAdmin={isAdmin} />
       ) : (
-        <Box bg="#007BFF" pl={0} width="100%">
+        <Box bg="white" pl={0} width="100%">
           <Flex as="nav">
-            <Image src={img10} w={'5rem'} h={'auto'} />
-            <Box></Box>
+            <Image src={img10} w={'7rem'} />
+            <Heading alignSelf={'center'}>Gyan</Heading>
             <Spacer />
-            <ButtonGroup pr="2vw" pt="0.5vw" spacing={4}>
+            <ButtonGroup pr="2vw" pt="0.5vw" spacing={4} alignSelf={'center'}>
               <Link to="/login">
                 <Button
                   size={{ base: "sm", md: "md", lg: "lg" }}
-                  colorScheme="whiteAlpha"
-                  variant="solid"
+                  bg={'#007BFF'}
+                  textColor={'white'}
                 >
                   Login
                 </Button>
@@ -147,8 +147,9 @@ function Landing() {
               <Link to="/register">
                 <Button
                   size={{ base: "sm", md: "md", lg: "lg" }}
-                  colorScheme="whiteAlpha"
-                  variant="outline"
+                  borderColor={'#007BFF'}
+                  variant={'outline'}
+                  textColor={'black'}
                 >
                   Register
                 </Button>
@@ -298,21 +299,21 @@ function Landing() {
             <Box>
               <div className="image-wrapper">
                 <Image src={img1} className='image' />
-                <Box as="flex" alignSelf="center" className='image-text'>
+                {/* <Box as="flex" alignSelf="center" className='image-text'>
                   <Text color="white" fontSize={["base", "sm", "md", "xl"]}>New to Our Page?</Text>
                   <Button size={{ base: "sm", md: "sm", lg: "md" }} backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Register Now</Button>
-                </Box>
+                </Box> */}
               </div>
             </Box>
             <Box>
               <div className="image-wrapper">
                 <Image src={img2} className='image' />
-                <Box as="flex" alignSelf="center" className='image-text'>
+                {/* <Box as="flex" alignSelf="center" className='image-text'>
                   <Text color="white" fontSize={["base", "sm", "md", "xl"]}>Latest Internships</Text>
                   <Link to={'/internship'}>
                     <Button size={{ base: "sm", md: "sm", lg: "md" }} variant="solid" backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Apply Now</Button>
                   </Link>
-                </Box>
+                </Box> */}
               </div>
             </Box>
             <Box>

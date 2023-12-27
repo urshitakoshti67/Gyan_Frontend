@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Image, Spacer, Avatar, Menu, Button, MenuList, MenuItem, MenuButton, useToast } from '@chakra-ui/react';
+import { Flex, Text, Box, Image, Spacer, Avatar, Menu, Button, MenuList, MenuItem, MenuButton, useToast, Heading } from '@chakra-ui/react';
 import logo from '../images/GyanLogo.png'; // Make sure to provide the correct path
 import { Link } from 'react-router-dom';
 import { ChevronDownIcon } from '@chakra-ui/icons'
@@ -28,16 +28,10 @@ const Navbar = ({ isAdmin }) => {
       overflowX="auto"
       whiteSpace="nowrap"
       flexWrap="wrap"
-      backgroundColor='#007BFF'
+      backgroundColor='white'
     >
-      <Image src={img10} w={'7rem'} maxH={'6rem'} mr={5} />
-      <Box mb={['4', '4', '0', '0']} textAlign={['center', 'center', 'left', 'left']}>
-        <Flex align={['center', 'center', 'start', 'start']}>
-          <Image src={logo} alt="logo" boxSize={['60px', '60px', '80px']} w={['35', '35', '45']} maxH={'5rem'} my="3" mx={['auto', 'auto', '0']} />
-          {/* <Text as='b' fontSize={['xl', 'xl', '3xl']} color='white' ml={['2', '2', '3']}>Your Brand</Text> */}
-        </Flex>
-      </Box>
-
+      <Image src={img10} w={'7rem'} />
+      <Heading alignSelf={'center'}>Gyan</Heading>
       <Spacer />
 
       <Flex
@@ -46,13 +40,13 @@ const Navbar = ({ isAdmin }) => {
 
       >
         <Box {...linkStyles}>
-          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/" className="nav-link"><Text color={'#007BFF'}>Home</Text></Link>
         </Box>
         <Box {...linkStyles}>
-          <Link to="/internship" className="nav-link">Internships</Link>
+          <Link to="/internship" className="nav-link"><Text color={'#007BFF'}>Internships</Text></Link>
         </Box>
         <Box {...linkStyles}>
-          <Link to="/search" className="nav-link">Search</Link>
+          <Link to="/search" className="nav-link"><Text color={'#007BFF'}>Search</Text></Link>
         </Box>
         {/* <Box {...linkStyles}>
           <Link to="/blog" className="nav-link">Blog</Link>
@@ -66,7 +60,7 @@ const Navbar = ({ isAdmin }) => {
         <Flex direction={'row'} p={['2', '2', '2', '3']} my={['3', '3', 'auto', 'auto']} fontSize={['xl', 'xl', '2xl', '2xl']} color='#007BFF'>
           <Avatar bg='teal.500' mb='2' ml='8' mr='3' />
           <Menu>
-            <MenuButton as={Button} color={'white'} marginTop={'4%'} fontSize={['xl', 'xl', '2xl', '2xl']} backgroundColor={'transparent'} rightIcon={<ChevronDownIcon />} _hover={{ bg: 'transparent', color: 'black' }}>
+            <MenuButton as={Button} color={'black'} marginTop={'4%'} fontSize={['md', 'md', 'lg', 'lg']} backgroundColor={'transparent'} rightIcon={<ChevronDownIcon />} border={'2px'} _hover={{ bg: 'transparent', color: 'black' }}>
               Profile
             </MenuButton>
 
@@ -123,7 +117,7 @@ const Navbar = ({ isAdmin }) => {
       </Flex>
       {/* } */}
 
-    </Flex>
+    </Flex >
   );
 };
 
