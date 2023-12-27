@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import img10 from "../images/aim4u_logo.jpg"
 const Navbar = ({ isAdmin }) => {
   const toast = useToast();
   const { userId } = useSelector((state) => { return state.user });
@@ -20,8 +21,8 @@ const Navbar = ({ isAdmin }) => {
   };
   return (
     <Flex
-      py={['2', '2', '2', '4']}
-      px={['4', '4', '6', '8']}
+      // py={['2', '2', '2', '4']}
+      // px={['4', '4', '6', '8']}
       w="100%"
       direction={['column', 'column', 'row', 'row']}
       overflowX="auto"
@@ -29,9 +30,10 @@ const Navbar = ({ isAdmin }) => {
       flexWrap="wrap"
       backgroundColor='#007BFF'
     >
+      <Image src={img10} w={'7rem'} maxH={'6rem'} mr={5} />
       <Box mb={['4', '4', '0', '0']} textAlign={['center', 'center', 'left', 'left']}>
         <Flex align={['center', 'center', 'start', 'start']}>
-          <Image src={logo} alt="logo" boxSize={['60px', '60px', '80px']} w={['35', '35', '45']} my="3" mx={['auto', 'auto', '0']} />
+          <Image src={logo} alt="logo" boxSize={['60px', '60px', '80px']} w={['35', '35', '45']} maxH={'5rem'} my="3" mx={['auto', 'auto', '0']} />
           {/* <Text as='b' fontSize={['xl', 'xl', '3xl']} color='white' ml={['2', '2', '3']}>Your Brand</Text> */}
         </Flex>
       </Box>

@@ -16,6 +16,7 @@ import img6 from "../images/project-management@2x.png"
 import img7 from "../images/graduate@2x.png"
 import img8 from "../images/bookmark@2x.png"
 import img9 from "../images/star.png"
+import img10 from "../images/aim4u_logo.jpg"
 import { useSelector } from 'react-redux';
 import Navbar from '../components/NavBar';
 import InternshipCard from '../components/InternshipCard'; // Update the path accordingly
@@ -128,8 +129,9 @@ function Landing() {
 
         <Navbar isAdmin={isAdmin} />
       ) : (
-        <Box bg="#007BFF" pt={5} pl={0} width="100%">
+        <Box bg="#007BFF" pl={0} width="100%">
           <Flex as="nav">
+            <Image src={img10} w={'5rem'} h={'auto'} />
             <Box></Box>
             <Spacer />
             <ButtonGroup pr="2vw" pt="0.5vw" spacing={4}>
