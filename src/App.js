@@ -67,7 +67,7 @@ export default function App() {
         <Route path="/applied" element={isAuthenticated ? <Applied /> : <Login />} />
         <Route path="/changePassword" element={isAuthenticated ? <ChangePassword /> : <Login />} />
         <Route path="/internship" element={<Internship />} />
-        <Route path="/about" element={<AboutUs />} />
+        {/* <Route path="/about" element={<AboutUs />} /> */}
         <Route path="/blog" element={<Blogs />} />
         <Route path="/admin" element={isAdmin ? <Admin /> : <p>current user is not admin</p>} />
         <Route path="/applications" element={isAdmin ? <ViewApplication /> : <p>current user is not admin</p>} />
