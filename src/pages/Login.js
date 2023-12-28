@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-import {
-  HStack,
-  Box,
-  Text,
-  Button,
-  Input,
-  Checkbox,
-  Image,
-  Flex,
-  useToast,
-  Heading
-} from '@chakra-ui/react';
+import { HStack, Box, Text, Button, Input, Checkbox, Image, Flex, useToast, Heading } from '@chakra-ui/react';
 import image1 from '../images/course2.png';
 import logo from '../images/google_logo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -19,6 +8,7 @@ import { loginSuccess } from '../Actions/userActions';
 import axios from 'axios';
 import NavBar from '../components/NavBar';
 import './Login.css';
+import { Spinner } from '@chakra-ui/react'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -27,9 +17,12 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setTimeout(2000);
     try {
       const { data } = await axios.post('http://localhost:8000/login/', {
         email,
@@ -51,6 +44,7 @@ const Login = () => {
       dispatch(loginSuccess(payload));
       setTimeout(2000);
       navigate('/');
+      setLoading(false);
     } catch (error) {
       toast({
         title: 'Authentication failed.',
@@ -60,14 +54,18 @@ const Login = () => {
         duration: 5000,
         isClosable: true,
       });
+      setLoading(false);
       console.log(error);
     }
   };
-
   return (
-    <div>
+    <Box position={'relative'}>
+
+      {/* Loading */}
+      {loading && <Box position={'absolute'} zIndex={1} w={'100vw'} h={'100vh'} display={'flex'} alignItems={'center'} justifyContent={'center'} bgColor={'rgba(0,0,0,0.6)'}><Spinner size={'xl'} /></Box>}
+
       {isAuthenticated && <NavBar name={'Login'} />}
-      <HStack spacing='80px' paddingTop='50' ml='100'>
+      <HStack spacing='80px' paddingTop='50' ml='100' position={'relative'} zIndex={0}>
         <Box w='700px' h='450px' paddingTop='60px'>
           <Image
             src={image1}
@@ -85,54 +83,8 @@ const Login = () => {
           <Heading pt={8} textAlign={'left'}><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#2F327D">Welcome to </Heading><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#00CBB8">Gyan@Aim4u</Heading></Heading>
           <HStack spacing='4px'>
             <Heading color={'#F48C06'} size={{ base: "base", md: "sm", lg: "sm" }}>Lets get you started</Heading>
-            {/* <Link to='/login'>
-              <Box w='110px' h='40px' borderRadius='25px' marginRight='10px'>
-                <Button
-                  w='110px'
-                  h='40px'
-                  borderRadius='25px'
-                  bg='rgba(45, 240, 228, 0.7)'
-                  _hover={{
-                    bg: 'rgba(45, 240, 228, 1)',
-                    cursor: 'pointer',
-                  }}
-                  _active={{
-                    bg: 'rgba(45, 240, 228, 1)',
-                  }}
-                  fontSize='15px'
-                  border='none'
-                >
-                  Login
-                </Button>
-              </Box>
-            </Link>
-            <Link to='/register'>
-              <Box w='110px' h='40px' borderRadius='25px'>
-                <Button
-                  w='110px'
-                  h='40px'
-                  borderRadius='25px'
-                  bg='rgba(45, 240, 228, 0.7)'
-                  _hover={{
-                    bg: 'rgba(45, 240, 228, 1)',
-                    cursor: 'pointer',
-                  }}
-                  _active={{
-                    bg: 'rgba(45, 240, 228, 1)',
-                  }}
-                  fontSize='15px'
-                  border='none'
-                >
-                  Register
-                </Button>
-              </Box>
-            </Link> */}
           </HStack>
-
           <br />
-          {/* <Text ml='30px' style={{ fontWeight: 'lighter' }} mb='0px'>
-            Let's get you started
-          </Text> */}
           <Text ml='30px' fontSize='14px' style={{ fontWeight: 'bold' }}>
             Email Address
           </Text>
@@ -216,7 +168,7 @@ const Login = () => {
           </Text>
         </Box>
       </HStack>
-    </div>
+    </Box>
   );
 };
 

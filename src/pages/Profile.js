@@ -1,18 +1,11 @@
 import React, { useRef } from 'react';
-import {
-  Box,
-  Button,
-  Text,
-  Heading,
-  Input,
-  useToast
-} from '@chakra-ui/react';
+import { Box, Button, Text, Heading, Input, useToast } from '@chakra-ui/react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import NavBar from '../components/NavBar';
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Spinner } from '@chakra-ui/react'
 
 const Profile = () => {
   const [Fname, setFName] = useState('');
@@ -28,6 +21,7 @@ const Profile = () => {
   const toast = useToast();
   const { userId } = useSelector((state) => state.user);
   const { isAdmin } = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(false);
 
   const downloadResume = async () => {
     try {
@@ -135,6 +129,8 @@ const Profile = () => {
         });
         return;
       }
+      setLoading(true);
+
       const accessToken = window.sessionStorage.getItem('accessToken');
 
       //user information update
@@ -153,7 +149,9 @@ const Profile = () => {
         duration: 5000,
         isClosable: true,
       });
+      setLoading(false);
       console.log(data);
+
     } catch (error) {
       toast({
         title: 'Failed To Update',
@@ -162,6 +160,8 @@ const Profile = () => {
         duration: 5000,
         isClosable: true,
       });
+
+      setLoading(false);
       console.log(error);
     }
 
@@ -170,6 +170,7 @@ const Profile = () => {
   const uploadResume = async () => {
     //resume upload
     if (resume) {
+      setLoading(true);
       const accessToken = window.sessionStorage.getItem('accessToken');
       console.log("Selected file:", resume);
       console.log("user", userId);
@@ -192,6 +193,8 @@ const Profile = () => {
           isClosable: true,
         });
 
+        setLoading(false);
+
       } catch (error) {
         toast({
           title: 'Resume Upload Failed',
@@ -200,6 +203,8 @@ const Profile = () => {
           duration: 5000,
           isClosable: true,
         });
+
+        setLoading(false);
         console.error("File upload failed:", error);
       }
     }
@@ -215,149 +220,155 @@ const Profile = () => {
   }
 
   return (
-    <Box>
-      <NavBar isAdmin={isAdmin} />
-      <Box bg={'#E4FFFF'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} w={['full', '50%']} m={'auto'} borderRadius={['0', '20']} pt={5} pb={10} mb={10}>
-        <Heading>User Information</Heading>
-        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
-          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>First Name</Heading>
-        </Box>
-        <Input
-          placeholder="First Name"
-          bgColor="white"
-          h="10"
-          mt={'1'}
-          w={['80%', '60%']}
-          fontSize="3l"
-          size="sm"
-          borderRadius="100"
-          borderWidth="medium"
-          borderColor="#49BBBD"
-          value={Fname}
-          onChange={(e) => setFName(e.target.value)}
-        />
-        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
-          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Last Name</Heading>
-        </Box>
-        <Input
-          placeholder="Last Name"
-          bgColor="white"
-          h="10"
-          mt={'1'}
-          w={['80%', '60%']}
-          fontSize="3l"
-          size="sm"
-          borderRadius="100"
-          borderWidth="medium"
-          borderColor="#49BBBD"
-          value={Lname}
-          onChange={(e) => setLName(e.target.value)}
-        />
-        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
-          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Phone Number</Heading>
-        </Box>
-        <Input
-          placeholder="Phone Number"
-          bgColor="white"
-          h="10"
-          mt={'1'}
-          w={['80%', '60%']}
-          fontSize="3l"
-          size="sm"
-          borderRadius="100"
-          borderWidth="medium"
-          borderColor="#49BBBD"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-        />
-        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
-          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1} mb={1}>Skills</Heading>
-          {skills.map((sk, index) => {
-            return <Box key={index} display={'flex'}>
-              <DeleteIcon onClick={() => {
-                setSkills(skills.filter((_, i) => i !== index));
-              }} />
-              <Text>{sk}</Text>
-            </Box>
-          })}
-        </Box>
-        <Box display={'flex'} mt={1} w={['80%', '60%']}>
+    <Box position={'relative'}>
+
+      {/* Loading */}
+      {loading && <Box position={'absolute'} zIndex={3} w={'full'} h={'full'} display={'flex'} alignItems={'center'} justifyContent={'center'} bgColor={'rgba(0,0,0,0.6)'}><Spinner size={'xl'} /></Box>}
+
+      <Box zIndex={0}>
+        <NavBar isAdmin={isAdmin} />
+        <Box bg={'#E4FFFF'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} w={['full', '50%']} m={'auto'} borderRadius={['0', '20']} pt={5} pb={10} mb={10}>
+          <Heading>User Information</Heading>
+          <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
+            <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>First Name</Heading>
+          </Box>
           <Input
-            placeholder="Add a Skill"
+            placeholder="First Name"
             bgColor="white"
             h="10"
+            mt={'1'}
+            w={['80%', '60%']}
             fontSize="3l"
             size="sm"
             borderRadius="100"
             borderWidth="medium"
             borderColor="#49BBBD"
-            value={singleSkill}
-            onChange={(e) => setSingleSkill(e.target.value)}
+            value={Fname}
+            onChange={(e) => setFName(e.target.value)}
           />
-          <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
-            let temp = skills;
-            temp.push(singleSkill);
-            setSkills(temp);
-            setSingleSkill('');
-          }}>Add</Button>
-        </Box>
-        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
-          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1} mb={1}>Education</Heading>
-          {education.map((ed, index) => {
-            return <Box key={index} display={'flex'}>
-              <DeleteIcon onClick={() => {
-                setEducation(education.filter((_, i) => i !== index));
-              }} />
-              <Text>{ed}</Text>
-            </Box>
-          })}
-        </Box>
-        <Box display={'flex'} mt={1} w={['80%', '60%']}>
+          <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
+            <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Last Name</Heading>
+          </Box>
           <Input
-            placeholder="Add an Education"
+            placeholder="Last Name"
             bgColor="white"
             h="10"
+            mt={'1'}
+            w={['80%', '60%']}
             fontSize="3l"
             size="sm"
             borderRadius="100"
             borderWidth="medium"
             borderColor="#49BBBD"
-            value={edu}
-            onChange={(e) => setEdu(e.target.value)}
+            value={Lname}
+            onChange={(e) => setLName(e.target.value)}
           />
-          <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
-            let temp = education;
-            temp.push(edu);
-            setEducation(temp);
-            setEdu('')
-          }}>Add</Button>
+          <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
+            <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Phone Number</Heading>
+          </Box>
+          <Input
+            placeholder="Phone Number"
+            bgColor="white"
+            h="10"
+            mt={'1'}
+            w={['80%', '60%']}
+            fontSize="3l"
+            size="sm"
+            borderRadius="100"
+            borderWidth="medium"
+            borderColor="#49BBBD"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
+            <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1} mb={1}>Skills</Heading>
+            {skills.map((sk, index) => {
+              return <Box key={index} display={'flex'}>
+                <DeleteIcon onClick={() => {
+                  setSkills(skills.filter((_, i) => i !== index));
+                }} />
+                <Text>{sk}</Text>
+              </Box>
+            })}
+          </Box>
+          <Box display={'flex'} mt={1} w={['80%', '60%']}>
+            <Input
+              placeholder="Add a Skill"
+              bgColor="white"
+              h="10"
+              fontSize="3l"
+              size="sm"
+              borderRadius="100"
+              borderWidth="medium"
+              borderColor="#49BBBD"
+              value={singleSkill}
+              onChange={(e) => setSingleSkill(e.target.value)}
+            />
+            <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
+              let temp = skills;
+              temp.push(singleSkill);
+              setSkills(temp);
+              setSingleSkill('');
+            }}>Add</Button>
+          </Box>
+          <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
+            <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1} mb={1}>Education</Heading>
+            {education.map((ed, index) => {
+              return <Box key={index} display={'flex'}>
+                <DeleteIcon onClick={() => {
+                  setEducation(education.filter((_, i) => i !== index));
+                }} />
+                <Text>{ed}</Text>
+              </Box>
+            })}
+          </Box>
+          <Box display={'flex'} mt={1} w={['80%', '60%']}>
+            <Input
+              placeholder="Add an Education"
+              bgColor="white"
+              h="10"
+              fontSize="3l"
+              size="sm"
+              borderRadius="100"
+              borderWidth="medium"
+              borderColor="#49BBBD"
+              value={edu}
+              onChange={(e) => setEdu(e.target.value)}
+            />
+            <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
+              let temp = education;
+              temp.push(edu);
+              setEducation(temp);
+              setEdu('')
+            }}>Add</Button>
+          </Box>
+          <Button onClick={handleUpdate} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
+            Update
+          </Button>
         </Box>
-        <Button onClick={handleUpdate} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
-          Update
-        </Button>
-      </Box>
-      <Box bg={'#E4FFFF'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} w={['full', '50%']} m={'auto'} borderRadius={['0', '20']} pt={5} pb={10} mb={10}>
-        <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
-          <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Resume</Heading>
+        <Box bg={'#E4FFFF'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} w={['full', '50%']} m={'auto'} borderRadius={['0', '20']} pt={5} pb={10} mb={10}>
+          <Box display={'flex'} flexDirection={'column'} mt={'5'} w={['80%', '60%']}>
+            <Heading fontSize={'1.2rem'} alignSelf={'flex-start'} ml={1}>Resume</Heading>
+          </Box>
+          <Input
+            placeholder="Resume"
+            bgColor="white"
+            h="10"
+            mt={'1'}
+            w={['80%', '60%']}
+            fontSize="md"
+            size="sm"
+            borderRadius="100"
+            borderWidth="medium"
+            borderColor="#49BBBD"
+            type='file'
+            accept='.pdf,.doc,.docx'
+            onChange={handleFileChange}
+          />
+          <Button onClick={uploadResume} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
+            Upload Resume
+          </Button>
         </Box>
-        <Input
-          placeholder="Resume"
-          bgColor="white"
-          h="10"
-          mt={'1'}
-          w={['80%', '60%']}
-          fontSize="md"
-          size="sm"
-          borderRadius="100"
-          borderWidth="medium"
-          borderColor="#49BBBD"
-          type='file'
-          accept='.pdf,.doc,.docx'
-          onChange={handleFileChange}
-        />
-        <Button onClick={uploadResume} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
-          Upload Resume
-        </Button>
       </Box>
     </Box>
   );

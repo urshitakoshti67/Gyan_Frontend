@@ -1,22 +1,14 @@
 // Register.js
 
 import React, { useState } from 'react';
-import {
-  HStack,
-  Box,
-  Text,
-  Button,
-  Input,
-  FormControl,
-  useToast,
-  Heading
-} from '@chakra-ui/react';
+import { HStack, Box, Text, Button, Input, FormControl, useToast, Heading } from '@chakra-ui/react';
 import image1 from '../images/course2.png';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import './Login.css';
+import { Spinner } from '@chakra-ui/react'
 
 const Register = () => {
 
@@ -28,9 +20,12 @@ const Register = () => {
   const navigate = useNavigate();
   const toast = useToast();
   const { isAuthenticated } = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setTimeout(2000);
     try {
       const res = await axios.post('http://localhost:8000/reg/', {
         Fname,
@@ -46,6 +41,8 @@ const Register = () => {
         duration: 5000,
         isClosable: true,
       });
+      setTimeout(2000);
+      setLoading(false);
       navigate('/login');
     } catch (error) {
       const em = error.response.data.errors.email;
@@ -58,14 +55,19 @@ const Register = () => {
         duration: 5000,
         isClosable: true,
       });
+      setLoading(false);
       console.log(error);
     }
   };
 
   return (
-    <div>
+    <Box position={'relative'}>
+
+      {/* Loading */}
+      {loading && <Box position={'absolute'} zIndex={1} w={'100vw'} h={'100%'} display={'flex'} alignItems={'center'} justifyContent={'center'} bgColor={'rgba(0,0,0,0.6)'}><Spinner size={'xl'} /></Box>}
+
       {isAuthenticated && <NavBar name={'Register'} />}
-      <HStack spacing='80px' paddingTop='50' ml='100'>
+      <HStack spacing='80px' paddingTop='50' ml='100' position={'relative'} zIndex={0}>
         <Box w='700px' h='450px' paddingTop='60px'>
           <img
             src={image1}
@@ -74,41 +76,11 @@ const Register = () => {
           />
         </Box>
 
-        <Box w='550px' h='650px' padding={'20px'} backgroundColor={'#E4FFFF'} borderRadius={'25px'}>
+        <Box w='550px' padding={'20px'} backgroundColor={'#E4FFFF'} borderRadius={'25px'}>
           <Heading textAlign={'left'}><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#2F327D">Welcome to </Heading><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#00CBB8">Gyan@Aim4u</Heading></Heading>
 
           <HStack spacing='4px'>
             <Heading color={'#F48C06'} size={{ base: "base", md: "sm", lg: "sm" }}>Lets get you started</Heading>
-            {/* <Link to='/login'>
-              <Box w='110px' h='40px' borderRadius='25px' marginRight='10px'>
-                <Button
-                  w='110px'
-                  h='40px'
-                  borderRadius='25px'
-                  bg='rgba(45, 240, 228, 0.7)'
-                  _hover={{ bg: 'rgba(45, 240, 228, 1)', cursor: 'pointer' }}
-                  _active={{ bg: 'rgba(45, 240, 228, 1)' }}
-                  fontSize='15px'
-                  border='none'>
-                  Login
-                </Button>
-              </Box>
-            </Link>
-            <Link to='/register'>
-              <Box w='110px' h='40px' borderRadius='25px'>
-                <Button
-                  w='110px'
-                  h='40px'
-                  borderRadius='25px'
-                  bg='rgba(45, 240, 228, 0.7)'
-                  _hover={{ bg: 'rgba(45, 240, 228, 1)', cursor: 'pointer' }}
-                  _active={{ bg: 'rgba(45, 240, 228, 1)' }}
-                  fontSize='15px'
-                  border='none'>
-                  Register
-                </Button>
-              </Box>
-            </Link> */}
           </HStack>
 
           <br />
@@ -206,7 +178,6 @@ const Register = () => {
             </FormControl>
             <br />
             <br />
-            {/* <Link to='/login'> */}
             <Button
               marginLeft='25px'
               w='450px'
@@ -222,24 +193,22 @@ const Register = () => {
             >
               Register
             </Button>
-            {/* </Link> */}
           </form>
-          <FormControl>
+          {/*<FormControl>
             <Text textAlign={'center'} mt='2%' fontSize='18px' fontWeight='bold'>
               or
             </Text>
           </FormControl>
 
-          <button type="button" class="login-with-google-btn" >
+           <button type="button" class="login-with-google-btn" >
             Sign in with Google
           </button>
           <Text textAlign={'center'} mt='2%' fontSize='14px' fontWeight='bold'>
             Already Have an Account? <Link to='/login'><span style={{ color: '#007BFF' }}>Login</span></Link>
-          </Text>
-
+          </Text> */}
         </Box>
       </HStack>
-    </div>
+    </Box>
   );
 };
 
