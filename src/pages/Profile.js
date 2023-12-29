@@ -170,30 +170,59 @@ const Profile = () => {
   const uploadResume = async () => {
     //resume upload
     if (resume) {
-      setLoading(true);
-      const accessToken = window.sessionStorage.getItem('accessToken');
-      console.log("Selected file:", resume);
-      console.log("user", userId);
-      const formData = new FormData();
-      formData.append('user_resume', resume);
-      formData.append('user', userId);
       try {
-        const response = await axios.post(`http://127.0.0.1:8000/user-resume/`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-            'Authorization': `Bearer ${accessToken}`
-          }
-        });
+        setLoading(true);
+        const accessToken = window.sessionStorage.getItem('accessToken');
+        console.log("Selected file:", resume);
+        console.log("user", userId);
+        const formData = new FormData();
+        formData.append('user_resume', resume);
+        formData.append('user', userId);
+        try {
+          const fd = new FormData();
+          fd.append('user', userId);
+          const { data } = await axios.post(`http://127.0.0.1:8000/view-user-resume/`,
+            fd,
+            {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer ${accessToken}`,
+              }
+            });
+          const response = await axios.put(`http://127.0.0.1:8000/user-resume/`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+              'Authorization': `Bearer ${accessToken}`
+            }
+          });
 
-        toast({
-          title: 'Resume Uploaded Successfully',
-          description: 'Resume has been updated',
-          status: 'success',
-          duration: 5000,
-          isClosable: true,
-        });
+          toast({
+            title: 'Resume Uploaded Successfully',
+            description: 'Resume has been updated',
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+          });
 
-        setLoading(false);
+          setLoading(false);
+        } catch (error) {
+          const response = await axios.post(`http://127.0.0.1:8000/user-resume/`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+              'Authorization': `Bearer ${accessToken}`
+            }
+          });
+
+          toast({
+            title: 'Resume Uploaded Successfully',
+            description: 'Resume has been updated',
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+          });
+
+          setLoading(false);
+        }
 
       } catch (error) {
         toast({
