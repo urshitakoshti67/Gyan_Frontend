@@ -11,11 +11,11 @@ const AboutUs = () => {
   return (
     <div>
       <NavBar isAdmin={isAdmin} />
-      <Heading mx="10" fontSize="6xl">
+      <Heading mt='10' mx="10" fontSize="3xl">
         About Us
       </Heading>
       <Flex
-        mt={['10', '10', '24']}
+        // mt={['10', '10', '24']}
         overflowX={'auto'}
         direction={['column', 'column', 'row']}
       >
@@ -24,12 +24,13 @@ const AboutUs = () => {
           maxW={['100%', '100%', '33%']}
           width={['100%', '100%', '33%']}
           as="u"
-          fontSize={['3xl', '3xl', '4xl']}
-          color="#02A4FF"
+          fontSize={['xl', '2xl', '2xl']}
+          // color="#02A4FF"
           textAlign={['center', 'center', 'left']}
           mb={['4', '4', '0']} // Add margin-bottom for spacing between Text and Image
+          textDecoration={'none'}
         >
-          We believe in fostering the next generation of talent. Our internship program is more than just an opportunity—it's a gateway to hands-on experience, mentorship, and a vibrant community that values innovation, growth, and diversity.
+          We believe in fostering the next generation of talent. Our internship program is more than just an opportunity - it's a gateway to hands-on experience, mentorship, and a vibrant community that values innovation, growth, and diversity.
         </Text>
         <Image
           src={about}

@@ -64,7 +64,7 @@ const Profile = () => {
     }
   }
 
-  const getUserData = async (e) => {
+  const getUserData = async () => {
     // e.preventDefault();
     try {
       const accessToken = window.sessionStorage.getItem('accessToken');

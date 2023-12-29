@@ -124,41 +124,7 @@ function Landing() {
 
   return (
     <div >
-
-      {isAuthenticated ? (
-
-        <Navbar isAdmin={isAdmin} />
-      ) : (
-        <Box bg="white" pl={0} width="100%">
-          <Flex as="nav">
-            <Image src={img10} w={'7rem'} />
-            <Heading alignSelf={'center'}>Gyan</Heading>
-            <Spacer />
-            <ButtonGroup pr="2vw" pt="0.5vw" spacing={4} alignSelf={'center'}>
-              <Link to="/login">
-                <Button
-                  size={{ base: "sm", md: "md", lg: "lg" }}
-                  bg={'#007BFF'}
-                  textColor={'white'}
-                >
-                  Login
-                </Button>
-              </Link>
-              <Link to="/register">
-                <Button
-                  size={{ base: "sm", md: "md", lg: "lg" }}
-                  borderColor={'#007BFF'}
-                  variant={'outline'}
-                  textColor={'black'}
-                >
-                  Register
-                </Button>
-              </Link>
-            </ButtonGroup>
-          </Flex>
-        </Box>
-      )}
-
+      <Navbar isAdmin={isAdmin} />
       <div >
         <div className="container">
           <Image src={img3} alt="Norway" object-fit="cover" w='full' />
@@ -392,51 +358,6 @@ function Landing() {
           </Center>
         </Box>
       </div>
-
-      <Box pt={{ base: "35%", md: "35%", lg: "13%" }}>
-        <Heading pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">All Our </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Internships</Heading></Heading>
-
-        <div className="scroll" style={{ "marginTop": "1rem" }}>
-          <Carousel
-            swipeable={true}
-            draggable={true}
-            showDots={true}
-            responsive={responsive}
-            ssr={false}
-            infinite={true}
-            autoPlay={true}
-            autoPlaySpeed={2000}
-            keyBoardControl={true}
-            transitionDuration={800}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-60px"
-          >
-            {/* {internships.map((internship, index) => (
-          <InternshipCard
-            key={index}
-            internshipTitle={internship.title}
-            internshipDuration={internship.description[0]}
-            internshipFees={internship.description[1]}
-          /> */}
-            {internship.map((intern, index) => (
-              <InternshipCard key={index}
-                id={intern.id}
-                internshipFees={intern.fees}
-                internshipTitle={intern.Internship_title}
-                internshipDuration={intern.duration_weeks}
-              />
-            ))}
-          </Carousel>
-        </div>
-      </Box>
-      <Box pt="2vw">
-        <Heading textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">Internships </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Curated Just For You</Heading></Heading>
-      </Box>
-      <Box pt="5vw" pb="5vw" >
-        <Image src="/frameend.png" />
-      </Box>
     </div>
   );
 };
