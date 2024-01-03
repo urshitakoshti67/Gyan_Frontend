@@ -62,8 +62,7 @@ export default function App() {
         <Route path="/profile" element={isAuthenticated ? <Profile /> : <Login />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/details/:id" element={isAuthenticated ? <IDetail /> : <Login />} />
-        <Route path="/search" element={isAuthenticated ? <Search /> : <Login />} />
-        <Route path="/applied" element={isAuthenticated ? <Applied /> : <Login />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/applied" element={isAuthenticated ? <Applied /> : <Login />} />
         <Route path="/changePassword" element={isAuthenticated ? <ChangePassword /> : <Login />} />
         <Route path="/internship" element={<Internship />} />

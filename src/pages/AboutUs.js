@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import { Box, Center, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import sir from '../images/sir.png';
-import PrevInterns from '../components/PrevInterns';
+// import PrevInterns from '../components/PrevInterns';
 import Footer from '../components/Footer';
 import about from '../images/about.png';
 import { useSelector } from 'react-redux';
@@ -11,13 +11,11 @@ const AboutUs = () => {
   return (
     <div>
       <NavBar isAdmin={isAdmin} />
-      <Heading mt='10' mx="10" fontSize="3xl">
-        About Us
-      </Heading>
       <Flex
-        // mt={['10', '10', '24']}
+        mt={['2', '2', '4']}
         overflowX={'auto'}
         direction={['column', 'column', 'row']}
+        alignItems={'center'}
       >
         <Text
           mx="auto"
@@ -30,6 +28,9 @@ const AboutUs = () => {
           mb={['4', '4', '0']} // Add margin-bottom for spacing between Text and Image
           textDecoration={'none'}
         >
+          <Text mt='10' fontSize="3xl" fontWeight={'semibold'}>
+            About Us
+          </Text>
           We believe in fostering the next generation of talent. Our internship program is more than just an opportunity - it's a gateway to hands-on experience, mentorship, and a vibrant community that values innovation, growth, and diversity.
         </Text>
         <Image

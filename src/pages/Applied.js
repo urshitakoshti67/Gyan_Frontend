@@ -10,6 +10,7 @@ const Applied = () => {
   const { isAdmin } = useSelector((state) => { return state.user });
   const { userId } = useSelector((state) => { return state.user });
   const [appliedInternships, setAppliedInternships] = useState([]);
+  const [notAppliedToAny, setNotAppliedToAny] = useState(false);
   const user = useSelector((state) => { return state.user });
   const toast = useToast();
   const viewApplied = async (e) => {
@@ -23,6 +24,9 @@ const Applied = () => {
           }
         });
       setAppliedInternships(data);
+      if (data.length == 0) {
+        setNotAppliedToAny(true);
+      }
     } catch (error) {
       console.log("error:", error);
     }
@@ -35,7 +39,8 @@ const Applied = () => {
     <div>
       <Navbar isAdmin={isAdmin} />
       <Box h='fit-content' pb='4' bg="#e8f3fd" w={"full"} >
-        <Text fontSize='35px' fontWeight='bold' ml="80px" paddingTop="15px">Applied Internships</Text>
+        {!notAppliedToAny && <Text fontSize='35px' fontWeight='bold' ml="80px" paddingTop="15px">Applied Internships</Text>}
+        {notAppliedToAny && <Text fontSize={25} fontWeight={'semibold'} ml={'80px'} paddingTop="15px">You have not applied to any internships</Text>}
         <VStack bg="#e8f3fd" w={"full"}>
 
           {appliedInternships &&

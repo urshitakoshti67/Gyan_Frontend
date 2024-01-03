@@ -63,7 +63,7 @@ const Navbar = ({ isAdmin }) => {
           <Flex direction={'row'} p={['2', '2', '2', '3']} my={['3', '3', 'auto', 'auto']} fontSize={['xl', 'xl', '2xl', '2xl']} color='#007BFF'>
             <Avatar bg='teal.500' mb='2' ml='8' mr='3' />
             <Menu>
-              <MenuButton as={Button} color={'black'} marginTop={'4%'} fontSize={['md', 'md', 'lg', 'lg']} backgroundColor={'transparent'} rightIcon={<ChevronDownIcon />} border={'2px'} _hover={{ bg: 'transparent', color: 'black' }}>
+              <MenuButton as={Button} color={'black'} marginTop={'4%'} fontSize={['md', 'md', 'lg', 'lg']} backgroundColor={'transparent'} rightIcon={<ChevronDownIcon />} border={'1px'} _hover={{ bg: 'transparent', color: 'black' }}>
                 Profile
               </MenuButton>
 

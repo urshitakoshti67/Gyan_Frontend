@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { HStack, Box, Text, Button, Input, Checkbox, Image, Flex, useToast, Heading } from '@chakra-ui/react';
 import image1 from '../images/course2.png';
 import logo from '../images/google_logo.png';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginSuccess } from '../Actions/userActions';
 import axios from 'axios';

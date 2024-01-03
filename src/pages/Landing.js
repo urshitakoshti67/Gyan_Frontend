@@ -20,6 +20,7 @@ import img10 from "../images/aim4u_logo.jpg"
 import { useSelector } from 'react-redux';
 import Navbar from '../components/NavBar';
 import InternshipCard from '../components/InternshipCard'; // Update the path accordingly
+import Footer from '../components/Footer';
 
 
 
@@ -123,242 +124,245 @@ function Landing() {
   const toast = useToast();
 
   return (
-    <div >
-      <Navbar isAdmin={isAdmin} />
-      <div >
-        <div className="container">
-          <Image src={img3} alt="Norway" object-fit="cover" w='full' />
-          <div className="text-block">
+    <Box>
+      <Box mb={'5rem'}>
+        <Navbar isAdmin={isAdmin} />
+        <div >
+          <div className="container">
+            <Image src={img3} alt="Norway" object-fit="cover" w='full' />
+            <div className="text-block">
 
-            <Heading pb="1vw" textAlign="center" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }} marginTop={'2%'}>Join Us And Shape Tomorrow</Heading>
-            <Heading textAlign="center" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "lg", "2xl": "2xl" }} marginLeft={'19%'}><Heading as="span" color="#F48C06" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>Internships </Heading><Heading as="span" color="white" size={{ base: "base", sam: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>That Make A <br /> Difference</Heading></Heading>
-            <Text pt="1vw" pb="1vw" textAlign={'center'} fontSize={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>Being an Intern is much easier</Text>
-            <Link to={'/internship'}><Button marginLeft={'45%'} size={{ base: "sm", md: "md", lg: "lg" }} backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Apply Now</Button></Link>
+              <Heading pb="1vw" textAlign="center" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }} marginTop={'2%'}>Join Us And Shape Tomorrow</Heading>
+              <Heading textAlign="center" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "lg", "2xl": "2xl" }} marginLeft={'19%'}><Heading as="span" color="#F48C06" size={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>Internships </Heading><Heading as="span" color="white" size={{ base: "base", sam: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>That Make A <br /> Difference</Heading></Heading>
+              <Text pt="1vw" pb="1vw" textAlign={'center'} fontSize={{ base: "base", sm: "sm", md: "md", lg: "lg", xl: "2xl", "2xl": "2xl" }}>Being an Intern is much easier</Text>
+              <Link to={'/internship'}><Button marginLeft={'45%'} size={{ base: "sm", md: "md", lg: "lg" }} backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Apply Now</Button></Link>
+            </div>
           </div>
         </div>
-      </div>
-      <Box pt="3vw" pb="1vw" fontSize={["sm", "md", "lg", "xl"]} >
-        <Heading size="lg" pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="black">Where Learning Meets </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#F48C06">Opportunity</Heading></Heading>
-        <Center >
-          <Center w='60vw' p={5} fontWeight="medium"> Perfect for students who aspire to embark on careers with leading tech giants like Microsoft, Google, and Barclays. Our opportunities are limited, and selection will be based on the information you provide in your application. Your future with these prestigious tech companies may just be a click away.</Center>
-        </Center>
+        <Box pt="3vw" pb="1vw" fontSize={["sm", "md", "lg", "xl"]} >
+          <Heading size="lg" pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="black">Where Learning Meets </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#F48C06">Opportunity</Heading></Heading>
+          <Center >
+            <Center w='60vw' p={5} fontWeight="medium"> Perfect for students who aspire to embark on careers with leading tech giants like Microsoft, Google, and Barclays. Our opportunities are limited, and selection will be based on the information you provide in your application. Your future with these prestigious tech companies may just be a click away.</Center>
+          </Center>
 
-        <Flex justifyContent="space-evenly" p={5} >
-          {/* <Box>
+          <Flex justifyContent="space-evenly" p={5} >
+            {/* <Box>
                    <Heading size={{ base: "base", md: "lg", lg: "3xl" }} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text' >100+</Heading>
                    <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">Students</Text>
                 </Box> */}
-          <Box>
-            <Heading
-              size={{ base: "base", md: "lg", lg: "3xl" }}
-              style={{
-                background: 'linear-gradient(to left, #7928CA, #FF0080)',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                textAlign: 'center',
-              }}
-            >
-              50
-            </Heading>
-            <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
-              Top Universities
-            </Text>
-          </Box>
+            <Box>
+              <Heading
+                size={{ base: "base", md: "lg", lg: "3xl" }}
+                style={{
+                  background: 'linear-gradient(to left, #7928CA, #FF0080)',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  textAlign: 'center',
+                }}
+              >
+                50
+              </Heading>
+              <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
+                Top Universities
+              </Text>
+            </Box>
 
-          {/* <Box>
+            {/* <Box>
                    <Heading size={{ base: "base", md: "lg", lg: "3xl" }} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>50</Heading>
                    <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">Top Universities</Text>
                 </Box> */}
-          <Box>
-            <Heading
-              size={{ base: "base", md: "lg", lg: "3xl" }}
-              style={{
-                background: 'linear-gradient(to left, #7928CA, #FF0080)',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                textAlign: 'center',
-              }}
-            >
-              100
-            </Heading>
-            <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
-              Projects
-            </Text>
-          </Box>
+            <Box>
+              <Heading
+                size={{ base: "base", md: "lg", lg: "3xl" }}
+                style={{
+                  background: 'linear-gradient(to left, #7928CA, #FF0080)',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  textAlign: 'center',
+                }}
+              >
+                100
+              </Heading>
+              <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
+                Projects
+              </Text>
+            </Box>
 
-          {/* <Box>
+            {/* <Box>
                    <Heading size={{ base: "base", md: "lg", lg: "3xl" }} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>100</Heading>
                    <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">Projects</Text>
                 </Box> */}
-          <Box>
-            <Heading
-              size={{ base: "base", md: "lg", lg: "3xl" }}
-              style={{
-                background: 'linear-gradient(to left, #7928CA, #FF0080)',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                textAlign: 'center',
-              }}
-            >
-              7
-            </Heading>
-            <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
-              Industry Experts
-            </Text>
-          </Box>
+            <Box>
+              <Heading
+                size={{ base: "base", md: "lg", lg: "3xl" }}
+                style={{
+                  background: 'linear-gradient(to left, #7928CA, #FF0080)',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  textAlign: 'center',
+                }}
+              >
+                7
+              </Heading>
+              <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
+                Industry Experts
+              </Text>
+            </Box>
 
-          {/* <Box>
+            {/* <Box>
                    <Heading size={{ base: "base", md: "lg", lg: "3xl" }} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>7</Heading>
                    <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }}  fontWeight="bold">Industry Experts</Text>
                 </Box> */}
-          <Box>
-            <Heading
-              size={{ base: "base", md: "lg", lg: "3xl" }}
-              style={{
-                background: 'linear-gradient(to left, #7928CA, #FF0080)',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                textAlign: 'center',
-              }}
-            >
-              23
-            </Heading>
-            <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} textAlign={'center'} fontWeight="bold">
-              Years of Experience
-            </Text>
-          </Box>
+            <Box>
+              <Heading
+                size={{ base: "base", md: "lg", lg: "3xl" }}
+                style={{
+                  background: 'linear-gradient(to left, #7928CA, #FF0080)',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  textAlign: 'center',
+                }}
+              >
+                23
+              </Heading>
+              <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} textAlign={'center'} fontWeight="bold">
+                Years of Experience
+              </Text>
+            </Box>
 
-          {/* <Box>
+            {/* <Box>
                    <Heading size={{ base: "base", md: "lg", lg: "3xl" }} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>23</Heading>
                    <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">Years of Experience</Text>
                 </Box> */}
-          <Box>
-            <Heading
-              size={{ base: "base", md: "lg", lg: "3xl" }}
-              style={{
-                background: 'linear-gradient(to left, #7928CA, #FF0080)',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                textAlign: 'center',
-              }}
-            >
-              100+
-            </Heading>
-            <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
-              Students
-            </Text>
-          </Box>
-
-        </Flex>
-      </Box>
-
-      <Box fontSize={["sm", "md", "lg", "xl"]}>
-        <Heading pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">What Is </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Gyan?</Heading></Heading>
-        <Center >
-          <Center w='60vw' p={5} fontSize={'2xl'} fontWeight="medium"> Gyan@Aim4u - Experience the power of learning with Aim4u. This is a transformation in learning process which incorporates internship experience along with learning from the industry experts and get ready to face the world of Artificial Intelligence and Machine Learning.</Center>
-        </Center>
-
-        <Center>
-
-          <Flex wrap={wrap} width="70vw" justifyContent="space-between" gap={'10'} pt={5}>
-
             <Box>
-              <div className="image-wrapper">
-                <Image src={img1} className='image' />
-                {/* <Box as="flex" alignSelf="center" className='image-text'>
+              <Heading
+                size={{ base: "base", md: "lg", lg: "3xl" }}
+                style={{
+                  background: 'linear-gradient(to left, #7928CA, #FF0080)',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  textAlign: 'center',
+                }}
+              >
+                100+
+              </Heading>
+              <Text fontSize={{ base: "base", md: "lg", lg: "2xl" }} fontWeight="bold">
+                Students
+              </Text>
+            </Box>
+
+          </Flex>
+        </Box>
+
+        <Box fontSize={["sm", "md", "lg", "xl"]}>
+          <Heading pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">What Is </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Gyan?</Heading></Heading>
+          <Center >
+            <Center w='60vw' p={5} fontSize={'2xl'} fontWeight="medium"> Gyan@Aim4u - Experience the power of learning with Aim4u. This is a transformation in learning process which incorporates internship experience along with learning from the industry experts and get ready to face the world of Artificial Intelligence and Machine Learning.</Center>
+          </Center>
+
+          <Center>
+
+            <Flex wrap={wrap} width="70vw" justifyContent="space-between" gap={'10'} pt={5}>
+
+              <Box>
+                <div className="image-wrapper">
+                  <Image src={img1} className='image' />
+                  {/* <Box as="flex" alignSelf="center" className='image-text'>
                   <Text color="white" fontSize={["base", "sm", "md", "xl"]}>New to Our Page?</Text>
                   <Button size={{ base: "sm", md: "sm", lg: "md" }} backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Register Now</Button>
                 </Box> */}
-              </div>
-            </Box>
-            <Box>
-              <div className="image-wrapper">
-                <Image src={img2} className='image' />
-                {/* <Box as="flex" alignSelf="center" className='image-text'>
+                </div>
+              </Box>
+              <Box>
+                <div className="image-wrapper">
+                  <Image src={img2} className='image' />
+                  {/* <Box as="flex" alignSelf="center" className='image-text'>
                   <Text color="white" fontSize={["base", "sm", "md", "xl"]}>Latest Internships</Text>
                   <Link to={'/internship'}>
                     <Button size={{ base: "sm", md: "sm", lg: "md" }} variant="solid" backgroundColor={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Apply Now</Button>
                   </Link>
                 </Box> */}
-              </div>
-            </Box>
-            <Box>
-            </Box>
-          </Flex>
-        </Center>
-      </Box>
-      <div>
-        <Box fontSize={["sm", "md", "lg", "xl"]} pt="4%" pl={'4'}>
-          <Heading textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">Benefits Of Joining Our </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Internship</Heading></Heading>
-          <Center>
-            <Grid pt="5vw" h='400px'
-              templateRows={{ base: "repeat(4, 1fr)", sm: "repeat(4, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(2, 1fr)", xl: "repeat(2, 1fr)" }}
-              templateColumns={{ base: "repeat(4, 1fr)", sm: "repeat(4, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(6, 1fr)", xl: "repeat(6, 1fr)" }}
-              gap={4}
-            >
-              <GridItem colSpan={2}  >
-                <Center>
-                  <Image boxSize="6vw" src={img4} /> <br />
-                </Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold"> Letter Of Recommendation</Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} className="t" w='30vw' fontWeight="medium" > <Text >Attract top universities and companies with the LOR provided by our world-class professor</Text> </Center>
-                <br />
-
-              </GridItem>
-              <GridItem colSpan={2}  >
-                <Center>
-                  <Image boxSize="6vw" src={img5} /> <br />
-                </Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold">Internship Certificate</Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium"> A certificate of Completion to upskill your resume and chart your career growth</Center>
-                <br />
-
-              </GridItem>
-              <GridItem colSpan={2}  >
-                <Center>
-                  <Image boxSize="6vw" src={img6} /> <br />
-                </Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold" > Real-Life Projects </Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium">Industry level projects that focus on society issues, business
-                  analytics and many more</Center>
-                <br />
-
-              </GridItem>
-
-              <GridItem colSpan={2}  >
-                <Center>
-                  <Image boxSize="6vw" src={img7} /> <br />
-                </Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold">Research Opportunity</Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium">  Publishing Research Papers efficiently that will boost your
-                  career chart</Center>
-                <br />
-
-              </GridItem>
-
-              <GridItem colSpan={2}  >
-                <Center>
-                  <Image boxSize="6vw" src={img8} /> <br />
-                </Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold">Structured Learning</Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium" >The course has been designed to facilitate an outcome based learning experience</Center>
-                <br />
-
-              </GridItem>
-              <GridItem colSpan={2}  >
-                <Center>
-                  <Image boxSize="6vw" src={img9} /> <br />
-                </Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold"> And much more!</Center>
-                <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium" > Connect with mentors and ease your way to the top</Center>
-                <br />
-
-              </GridItem>
-            </Grid>
+                </div>
+              </Box>
+              <Box>
+              </Box>
+            </Flex>
           </Center>
         </Box>
-      </div>
-    </div>
+        <Box>
+          <Box fontSize={["sm", "md", "lg", "xl"]} pt="4%" pl={'4'}>
+            <Heading textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">Benefits Of Joining Our </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Internship</Heading></Heading>
+            <Center>
+              <Grid pt="5vw" h='400px'
+                templateRows={{ base: "repeat(4, 1fr)", sm: "repeat(4, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(2, 1fr)", xl: "repeat(2, 1fr)" }}
+                templateColumns={{ base: "repeat(4, 1fr)", sm: "repeat(4, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(6, 1fr)", xl: "repeat(6, 1fr)" }}
+                gap={4}
+              >
+                <GridItem colSpan={2}  >
+                  <Center>
+                    <Image boxSize="6vw" src={img4} /> <br />
+                  </Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold"> Letter Of Recommendation</Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} className="t" w='30vw' fontWeight="medium" > <Text >Attract top universities and companies with the LOR provided by our world-class professor</Text> </Center>
+                  <br />
+
+                </GridItem>
+                <GridItem colSpan={2}  >
+                  <Center>
+                    <Image boxSize="6vw" src={img5} /> <br />
+                  </Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold">Internship Certificate</Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium"> A certificate of Completion to upskill your resume and chart your career growth</Center>
+                  <br />
+
+                </GridItem>
+                <GridItem colSpan={2}  >
+                  <Center>
+                    <Image boxSize="6vw" src={img6} /> <br />
+                  </Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold" > Real-Life Projects </Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium">Industry level projects that focus on society issues, business
+                    analytics and many more</Center>
+                  <br />
+
+                </GridItem>
+
+                <GridItem colSpan={2}  >
+                  <Center>
+                    <Image boxSize="6vw" src={img7} /> <br />
+                  </Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold">Research Opportunity</Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium">  Publishing Research Papers efficiently that will boost your
+                    career chart</Center>
+                  <br />
+
+                </GridItem>
+
+                <GridItem colSpan={2}  >
+                  <Center>
+                    <Image boxSize="6vw" src={img8} /> <br />
+                  </Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold">Structured Learning</Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium" >The course has been designed to facilitate an outcome based learning experience</Center>
+                  <br />
+
+                </GridItem>
+                <GridItem colSpan={2}  >
+                  <Center>
+                    <Image boxSize="6vw" src={img9} /> <br />
+                  </Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' fontWeight="bold"> And much more!</Center>
+                  <Center fontSize={["sm", "md", "lg", "xl"]} w='30vw' className="t" fontWeight="medium" > Connect with mentors and ease your way to the top</Center>
+                  <br />
+
+                </GridItem>
+              </Grid>
+            </Center>
+          </Box>
+        </Box>
+      </Box>
+      <Footer />
+    </Box>
   );
 };
 
