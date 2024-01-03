@@ -21,8 +21,7 @@ const Home = () => {
     const viewRecommendedInternships = async () => {
       try {
         const accessToken = window.sessionStorage.getItem('accessToken');
-        const { data } = await axios.post(
-          'http://127.0.0.1:8000/intern/rec/',
+        const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/intern/rec/`,
           { user: userId },
           {
             headers: {
@@ -39,7 +38,7 @@ const Home = () => {
     const getUserData = async () => {
       try {
         const accessToken = window.sessionStorage.getItem('accessToken');
-        const { data } = await axios.post(`http://127.0.0.1:8000/user-data/`,
+        const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/user-data/`,
           { user: userId },
           {
             headers: {
@@ -59,7 +58,7 @@ const Home = () => {
   }, [userId]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/intern/all-internship/')
+    axios.get(`${process.env.REACT_APP_BASE_URL}/intern/all-internship/`)
       .then(res => {
         setInternships(res.data);
         console.log('Internships:', res.data);

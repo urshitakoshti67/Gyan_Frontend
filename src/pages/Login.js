@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HStack, Box, Text, Button, Input, Checkbox, Image, Flex, useToast, Heading } from '@chakra-ui/react';
 import image1 from '../images/course2.png';
 import logo from '../images/google_logo.png';
@@ -24,7 +24,7 @@ const Login = () => {
     setLoading(true);
     setTimeout(2000);
     try {
-      const { data } = await axios.post('http://localhost:8000/login/', {
+      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/login/`, {
         email,
         password,
       });

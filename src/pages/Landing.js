@@ -27,47 +27,6 @@ import Footer from '../components/Footer';
 function Landing() {
   const { isAuthenticated, isAdmin } = useSelector((state) => { return state.user });
 
-  //   const [internship,setInternship]=useState('');
-  //   useEffect(() => {
-  //     getInternship();
-  //   }, []);
-  //   const [fees, setFees] = useState('');
-  //  const [title, setTitle] = useState('');
-  //  const [duration, setDuration] = useState('');
-
-  //  useEffect(() => {
-  //     axios.get('http://127.0.0.1:8000/intern/all-internship/')
-  //       .then(res => {
-  //         console.log(res.data);
-  //         // Extracting fees, Title, and duration
-  //         const feesValue = res.data.fees;
-  //         const titleValue = res.data.Internship_title;
-  //         const durationValue = res.data.duration_weeks;
-
-  //         setFees(feesValue);
-  //         setTitle(titleValue);
-  //         setDuration(durationValue);
-
-  //         console.log('Fees:', feesValue);
-  //         console.log('Title:', titleValue);
-  //         console.log('Duration:', durationValue);
-  //       }).catch(err => {
-  //         console.log(err)
-  //       })
-  //  }, []);
-  const [internship, setInternship] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/intern/all-internship/')
-      .then(res => {
-        setInternship(res.data);
-
-        console.log('Internships:', res.data);
-      }).catch(err => {
-        console.log(err)
-      })
-  }, [isAuthenticated]);
-
   <style>
     {`
           .t {

@@ -13,7 +13,7 @@ const ChangePassword = () => {
         try {
             const accessToken = window.sessionStorage.getItem('accessToken');
             if (password === password2) {
-                const { data } = await axios.post('http://127.0.0.1:8000/changepassword/',
+                const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/changepassword/`,
                     { password, password2 },
                     {
                         headers: {

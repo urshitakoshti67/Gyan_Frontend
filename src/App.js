@@ -35,7 +35,7 @@ export default function App() {
           'Authorization': `Bearer ${accessToken}`
         }
       };
-      const res = await axios.get('http://localhost:8000/profile/', config);
+      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/profile/`, config);
       //  console.log(res.data)
       const email = res.data.email;
       const id = res.data.id;

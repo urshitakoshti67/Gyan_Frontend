@@ -22,7 +22,7 @@ const Admin = () => {
         const formData = new FormData();
         formData.append('file', CSV);
         const accessToken = window.sessionStorage.getItem('accessToken');
-        const response = await axios.post('http://127.0.0.1:8000/super/upload-csv/', formData, {
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/super/upload-csv/`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer ${accessToken}`

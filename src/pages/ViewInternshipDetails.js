@@ -11,7 +11,7 @@ const ViewInternshipDetails = () => {
     const getInternships = async (e) => {
         try {
             const accessToken = window.sessionStorage.getItem('accessToken');
-            const { data } = await axios.get('http://127.0.0.1:8000/super/view-internsips/', {
+            const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/super/view-internsips/`, {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
                 }
@@ -68,20 +68,6 @@ const ViewInternshipDetails = () => {
                             Edit details
                         </Text>
                     </Link>
-                    {/* <Button
-                bg="#49BBBD"
-                w="200px"
-                h="35px"
-                ml="40px"
-                marginTop="8px"
-                borderRadius="11px"
-                _hover={{ bg: '#3a9597' }}
-                onClick={() => apply(internship.id)} // Pass the internship.id to the apply function
-              >
-                <Text fontSize="20px" fontWeight="semibold" color="white">
-                  Apply Now
-                </Text>
-              </Button> */}
                 </Box>
             ))}
             <Footer />

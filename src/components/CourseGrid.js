@@ -23,7 +23,7 @@ const CourseGrid = ({ name }) => {
 
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/intern/all-internship/')
+      .get(`${process.env.REACT_APP_BASE_URL}/intern/all-internship/`)
       .then((res) => {
         setInternships(res.data);
         console.log('Internships:', res.data);

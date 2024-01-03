@@ -6,22 +6,6 @@ import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
 const Footer = () => {
   return (
     <div>
-      <Flex bgColor="#252641" color="white" justifyContent='center' h="130px" mt='10'>
-        <Box>
-          <Flex align='center' mt="10">
-            <Image src={logo} alt="logo" boxSize="80px" w="45" my="5" mx="10" />
-            <Text as="b" fontSize="3xl" color="white"></Text>
-            <Box
-              h="100px" // Set the height to 100 pixels
-              borderLeft="2px" // Set the border-left property to create a line
-              borderColor="#626381" // Set the color of the line
-              mx="0" // Set margin for spacing if needed
-            />
-            <Text px='10' fontSize='6xl' font='b'>Gyan</Text>
-          </Flex>
-        </Box>
-
-      </Flex>
       <Flex bgColor="#252641" color="white" justifyContent="center" h='75px' pl='0'>
         <Text mt='20' mr='24' fontSize='3xl'>Explore</Text>
         <Text mt='20' mr='48' fontSize='3xl'>Contact</Text>
@@ -65,11 +49,7 @@ const Footer = () => {
             window.open('https://www.aim4u.co.in/#/privacy-policy', '_blank', 'noopener noreferrer');
           }}>Privacy Policy</Text>
         </Flex>
-
       </Flex>
-      {/* <Flex bgColor="#252641" color="white" justifyContent="center" h="sm">
-        <Text mt='20' mr='15' fontSize='xl' alignItems='center'>© 2021 Class Technologies Inc. </Text>
-    </Flex> */}
     </div>
   );
 };
