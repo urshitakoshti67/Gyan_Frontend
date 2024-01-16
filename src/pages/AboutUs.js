@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import { Box, Center, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import sir from '../images/sir.png';
+import ambassidor from '../images/ambassidor.png';
 // import PrevInterns from '../components/PrevInterns';
 import Footer from '../components/Footer';
 import about from '../images/about.png';
@@ -62,10 +63,29 @@ const AboutUs = () => {
             />
           </Center>
         </Box>
+        <Box bgColor="#BFDEFF" mt="10">
+          <Heading p="12" fontSize="3xl">
+            Our Ambassador
+          </Heading>
+          <Center>
+            <Image
+              src={ambassidor}
+              alt=""
+              bgColor="white"
+              borderRadius="16"
+              p="28"
+              mb="10"
+              mx='auto'
+              w='70%'
+            />
+          </Center>
+        </Box>
       </div>
+      
       {/* <PrevInterns /> */}
       <Footer />
     </div>
+    
   );
 };
 
