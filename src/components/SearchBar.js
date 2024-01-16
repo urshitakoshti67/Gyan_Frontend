@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   const searchBySkills = useCallback(async () => {
     const accessToken = window.sessionStorage.getItem('accessToken');
-    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/intern/search/skills/?user_skills=${userSkills}`, {
+    const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/intern/search/skills/?user_skills=${userSkills}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }
@@ -22,7 +22,7 @@ const SearchBar = () => {
 
   const searchByTitle = useCallback(async () => {
     const accessToken = window.sessionStorage.getItem('accessToken');
-    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/intern/search/title/?search=${title}`, {
+    const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/intern/search/title/?search=${title}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }
@@ -33,7 +33,7 @@ const SearchBar = () => {
 
   const searchByDuration = useCallback(async () => {
     const accessToken = window.sessionStorage.getItem('accessToken');
-    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/intern/search/duration/?duration=${duration}`, {
+    const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/intern/search/duration/?duration=${duration}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }

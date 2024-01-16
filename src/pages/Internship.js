@@ -21,7 +21,7 @@ const Home = () => {
     const viewRecommendedInternships = async () => {
       try {
         const accessToken = window.sessionStorage.getItem('accessToken');
-        const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/intern/rec/`,
+        const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/intern/rec/`,
           { user: userId },
           {
             headers: {
@@ -38,7 +38,7 @@ const Home = () => {
     const getUserData = async () => {
       try {
         const accessToken = window.sessionStorage.getItem('accessToken');
-        const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/user-data/`,
+        const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/user-data/`,
           { user: userId },
           {
             headers: {
@@ -58,7 +58,7 @@ const Home = () => {
   }, [userId]);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BASE_URL}/intern/all-internship/`)
+    axios.get(`https://gyanbackend.aim4u.co.in/intern/all-internship/`)
       .then(res => {
         setInternships(res.data);
         console.log('Internships:', res.data);

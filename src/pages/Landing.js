@@ -7,8 +7,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { wrap } from 'framer-motion'
-import img1 from "../images/rectangle-19@2x.png"
-import img2 from "../images/rectangle-21@2x.png"
+import img1 from "../images/img2.jpg"
+import img2 from "../images/img4.jpg"
 import img3 from "../images/homepage.png"
 import img4 from "../images/diploma@2x.png"
 import img5 from "../images/paper-plane@2x.png"
@@ -214,7 +214,7 @@ function Landing() {
         </Box>
 
         <Box fontSize={["sm", "md", "lg", "xl"]}>
-          <Heading pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">What Is </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Gyan?</Heading></Heading>
+          <Heading pt={10} textAlign={'center'}><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#2F327D">What is </Heading><Heading as="span" size={{ base: "base", md: "lg", lg: "2xl" }} color="#00CBB8">Gyan?</Heading></Heading>
           <Center >
             <Center w='60vw' p={5} fontSize={'2xl'} fontWeight="medium"> Gyan@Aim4u - Experience the power of learning with Aim4u. This is a transformation in learning process which incorporates internship experience along with learning from the industry experts and get ready to face the world of Artificial Intelligence and Machine Learning.</Center>
           </Center>

@@ -13,7 +13,7 @@ const ChangePassword = () => {
         try {
             const accessToken = window.sessionStorage.getItem('accessToken');
             if (password === password2) {
-                const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/changepassword/`,
+                const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/changepassword/`,
                     { password, password2 },
                     {
                         headers: {

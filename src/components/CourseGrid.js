@@ -23,7 +23,7 @@ const CourseGrid = ({ name }) => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BASE_URL}/intern/all-internship/`)
+      .get(`https://gyanbackend.aim4u.co.in/intern/all-internship/`)
       .then((res) => {
         setInternships(res.data);
         console.log('Internships:', res.data);

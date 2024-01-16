@@ -22,7 +22,7 @@ const UpdateInternshipDetails = () => {
         try {
             const accessToken = window.sessionStorage.getItem('accessToken');
             let internship;
-            const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/super/view-internsips/`, {
+            const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/super/view-internsips/`, {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
                 }
@@ -49,7 +49,7 @@ const UpdateInternshipDetails = () => {
     const updateDetails = async () => {
         try {
             const accessToken = window.sessionStorage.getItem('accessToken');
-            const { data } = await axios.put(`${process.env.REACT_APP_BASE_URL}/super/view-internsips/?uid=${id}`,
+            const { data } = await axios.put(`https://gyanbackend.aim4u.co.in/super/view-internsips/?uid=${id}`,
                 {
                     id: id,
                     Internship_title: title,

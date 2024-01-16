@@ -27,7 +27,7 @@ const Register = () => {
     setLoading(true);
     setTimeout(2000);
     try {
-      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/reg/`, {
+      const res = await axios.post(`https://gyanbackend.aim4u.co.in/reg/`, {
         Fname,
         Lname,
         email,

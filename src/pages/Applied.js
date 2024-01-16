@@ -16,7 +16,7 @@ const Applied = () => {
   const viewApplied = async (e) => {
     try {
       const accessToken = window.sessionStorage.getItem('accessToken');
-      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/intern/apply-internships/`,
+      const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/intern/apply-internships/`,
         { user: user.userId },
         {
           headers: {
@@ -86,7 +86,7 @@ const Applied = () => {
                   onClick={async () => {
                     try {
                       const accessToken = window.sessionStorage.getItem('accessToken');
-                      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/intern/delete-applied-internship/`,
+                      const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/intern/delete-applied-internship/`,
                         { user: userId, internship_id: item.id },
                         {
                           headers: {

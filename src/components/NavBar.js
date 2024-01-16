@@ -77,7 +77,7 @@ const Navbar = ({ isAdmin }) => {
                     const accessToken = window.sessionStorage.getItem('accessToken');
                     const formData = new FormData();
                     formData.append('user', userId);
-                    const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/view-user-resume/`,
+                    const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/view-user-resume/`,
                       formData,
                       {
                         headers: {

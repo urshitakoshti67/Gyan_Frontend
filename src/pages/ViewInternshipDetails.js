@@ -11,7 +11,7 @@ const ViewInternshipDetails = () => {
     const getInternships = async (e) => {
         try {
             const accessToken = window.sessionStorage.getItem('accessToken');
-            const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/super/view-internsips/`, {
+            const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/super/view-internsips/`, {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
                 }

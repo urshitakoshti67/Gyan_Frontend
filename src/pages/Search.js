@@ -29,7 +29,7 @@ const Search = () => {
         return;
       }
       setLoading(true);
-      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/intern/search/title/?search=${selectedOption}`);
+      const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/intern/search/title/?search=${selectedOption}`);
       setSearchResult(data);
       console.log(data);
       setLoading(false);
@@ -61,7 +61,7 @@ const Search = () => {
         return;
       }
       setLoading(true);
-      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/intern/search/duration/?duration=${selectedOption}`);
+      const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/intern/search/duration/?duration=${selectedOption}`);
       setSearchResult(data);
       console.log(data);
       setLoading(false);
@@ -94,7 +94,7 @@ const Search = () => {
       }
       setLoading(true);
       const arr = [selectedOption];
-      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/intern/search/skills/?user_skills=${arr}`);
+      const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/intern/search/skills/?user_skills=${arr}`);
       setSearchResult(data);
       console.log(data);
       setLoading(false);

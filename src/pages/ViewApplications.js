@@ -10,7 +10,7 @@ const ViewApplication = () => {
     const getApplications = async (e) => {
         try {
             const accessToken = window.sessionStorage.getItem('accessToken');
-            const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/super/view-appiled-interns/`, {
+            const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/super/view-appiled-interns/`, {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
                 }

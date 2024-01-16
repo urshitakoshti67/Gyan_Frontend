@@ -24,7 +24,7 @@ const IDetail = () => {
     try {
       const accessToken = window.sessionStorage.getItem('accessToken');
       console.log(accessToken);
-      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/intern/apply/`,
+      const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/intern/apply/`,
         { user: userId, internship_id: id },
         {
           headers: {
@@ -54,7 +54,7 @@ const IDetail = () => {
   useEffect(() => {
     const fetchInternshipDetails = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/intern/all-internship/`);
+        const response = await axios.get(`https://gyanbackend.aim4u.co.in/intern/all-internship/`);
         const allInternships = response.data;
 
         // Find the internship with the matching ID

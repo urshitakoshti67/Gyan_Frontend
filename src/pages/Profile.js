@@ -29,7 +29,7 @@ const Profile = () => {
       console.log(accessToken);
       const formData = new FormData();
       formData.append('user', userId);
-      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/user-resume/`, formData, {
+      const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/user-resume/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${accessToken}`
@@ -54,7 +54,7 @@ const Profile = () => {
           'Authorization': `Bearer ${accessToken}`
         }
       };
-      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/profile/`, config);
+      const { data } = await axios.get(`https://gyanbackend.aim4u.co.in/profile/`, config);
       // console.log(data);
       setFName(data.Fname);
       setLName(data.Lname);
@@ -68,7 +68,7 @@ const Profile = () => {
     // e.preventDefault();
     try {
       const accessToken = window.sessionStorage.getItem('accessToken');
-      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/user-data/`,
+      const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/user-data/`,
         { user: userId },
         {
           headers: {
@@ -134,7 +134,7 @@ const Profile = () => {
       const accessToken = window.sessionStorage.getItem('accessToken');
 
       //user information update
-      const { data } = await axios.put(`${process.env.REACT_APP_BASE_URL}/user-data/`,
+      const { data } = await axios.put(`https://gyanbackend.aim4u.co.in/user-data/`,
         { user: userId, phone_number: phoneNumber, skills: JSON.stringify(skills), education: JSON.stringify(education) },
         {
           headers: {
@@ -181,7 +181,7 @@ const Profile = () => {
         try {
           const fd = new FormData();
           fd.append('user', userId);
-          const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/view-user-resume/`,
+          const { data } = await axios.post(`https://gyanbackend.aim4u.co.in/view-user-resume/`,
             fd,
             {
               headers: {
@@ -189,7 +189,7 @@ const Profile = () => {
                 'Authorization': `Bearer ${accessToken}`,
               }
             });
-          const response = await axios.put(`${process.env.REACT_APP_BASE_URL}/user-resume/`, formData, {
+          const response = await axios.put(`https://gyanbackend.aim4u.co.in/user-resume/`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
               'Authorization': `Bearer ${accessToken}`
@@ -206,7 +206,7 @@ const Profile = () => {
 
           setLoading(false);
         } catch (error) {
-          const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/user-resume/`, formData, {
+          const response = await axios.post(`https://gyanbackend.aim4u.co.in/user-resume/`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
               'Authorization': `Bearer ${accessToken}`

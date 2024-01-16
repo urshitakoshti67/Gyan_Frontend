@@ -15,7 +15,7 @@ const Footer = () => {
           <Text mt='20' mx='10' fontSize='3xl'>Legal</Text>
         </Flex>
         {/* Add an image in the right corner */}
-        <Image src={logo} alt="Logo" w="100px" h="auto" />
+        <Image src={logo} alt="Logo" w="400px" h="auto" position="absolute" bottom="100" left="1000"/>
       </Flex>
       <Flex direction='row' bgColor="#252641" color="white" h='sm'>
         <Flex direction='column' mt='16' mx='10'>
@@ -42,6 +42,10 @@ const Footer = () => {
           <Text mt='4' fontSize='xl' cursor={'pointer'} onClick={() => window.open('https://www.aim4u.co.in/#/privacy-policy', '_blank', 'noopener noreferrer')}>Privacy Policy</Text>
         </Flex>
       </Flex>
+       {/* Statement of "All Copyrights Reserved 2024" */}
+       <Box bgColor="#252641" color="white" p="4" textAlign="center">
+        <Text fontSize="xl">All Copyrights Reserved 2024</Text>
+      </Box>
     </div>
   );
 };
