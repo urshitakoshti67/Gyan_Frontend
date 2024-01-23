@@ -40,16 +40,16 @@ const Navbar = ({ isAdmin }) => {
 
       >
         <Box {...linkStyles}>
-          <Link to="/" className="nav-link"><Text color={'#007BFF'} _hover={{ opacity: "50%" }}>Home</Text></Link>
+          <Link to="/" className="nav-link"><Text color={'#000080'} _hover={{ opacity: "50%" }}>Home</Text></Link>
         </Box>
         <Box {...linkStyles}>
-          <Link to="/about" className="nav-link"><Text color={'#007BFF'} _hover={{ opacity: "50%" }}>About</Text></Link>
+          <Link to="/about" className="nav-link"><Text color={'#000080'} _hover={{ opacity: "50%" }}>About</Text></Link>
         </Box>
         <Box {...linkStyles}>
-          <Link to="/internship" className="nav-link"><Text color={'#007BFF'} _hover={{ opacity: "50%" }}>Internships</Text></Link>
+          <Link to="/internship" className="nav-link"><Text color={'#000080'} _hover={{ opacity: "50%" }}>Internships</Text></Link>
         </Box>
         <Box {...linkStyles}>
-          <Link to="/search" className="nav-link"><Text color={'#007BFF'} _hover={{ opacity: "50%" }}>Search</Text></Link>
+          <Link to="/search" className="nav-link"><Text color={'#000080'} _hover={{ opacity: "50%" }}>Search</Text></Link>
         </Box>
         {/* <Box {...linkStyles}>
           <Link to="/blog" className="nav-link">Blog</Link>
@@ -60,14 +60,14 @@ const Navbar = ({ isAdmin }) => {
       <Spacer />
       {isAuthenticated &&
         <Flex direction={['column', 'column', 'row', 'row']} align={['center', 'center', 'center', 'center']}>
-          <Flex direction={'row'} p={['2', '2', '2', '3']} my={['3', '3', 'auto', 'auto']} fontSize={['xl', 'xl', '2xl', '2xl']} color='#007BFF'>
-            <Avatar bg='teal.500' mb='2' ml='8' mr='3' />
+          <Flex direction={'row'} p={['2', '2', '2', '3']} my={['3', '3', 'auto', 'auto']} fontSize={['xl', 'xl', '2xl', '2xl']} color='#000080'>
+            <Avatar bg='#000080' mb='2' ml='8' mr='3' />
             <Menu>
-              <MenuButton as={Button} color={'black'} marginTop={'4%'} fontSize={['md', 'md', 'lg', 'lg']} backgroundColor={'transparent'} rightIcon={<ChevronDownIcon />} border={'1px'} _hover={{ bg: 'transparent', color: 'black' }}>
+              <MenuButton as={Button} color={'#000080'} marginTop={'4%'} fontSize={['md', 'md', 'lg', 'lg']} backgroundColor={'transparent'} rightIcon={<ChevronDownIcon />} border={'1px'} _hover={{color: '#000080' }}>
                 Profile
               </MenuButton>
 
-              <MenuList color={'black'} >
+              <MenuList color={'#000080'} >
                 {!isAdmin && <Link to='/profile'><MenuItem>Update Profile</MenuItem></Link>}
                 {isAdmin && <Link to='/admin'><MenuItem>Admin Interface</MenuItem></Link>}
                 {!isAdmin && <Link to={'/applied'}><MenuItem>My Applications</MenuItem></Link>}
@@ -126,7 +126,7 @@ const Navbar = ({ isAdmin }) => {
               <Link to="/login">
                 <Button
                   size={{ base: "sm", md: "md", lg: "lg" }}
-                  bg={'#007BFF'}
+                  bg={'#000080'}
                   textColor={'white'}
                 >
                   Login
@@ -135,9 +135,9 @@ const Navbar = ({ isAdmin }) => {
               <Link to="/register">
                 <Button
                   size={{ base: "sm", md: "md", lg: "lg" }}
-                  borderColor={'#007BFF'}
+                  borderColor={'#000080'}
                   variant={'outline'}
-                  textColor={'black'}
+                  textColor={'#000080'}
                 >
                   Register
                 </Button>

@@ -139,21 +139,21 @@ const Search = () => {
           <TabList>
             <Tab
               onClick={() => handleTabChange('title')}
-              _selected={{ bg: '#007BFF', color: 'white' }}
+              _selected={{ bg: '#000080', color: 'white' }}
               _focus={{ outline: 'none' }}
             >
               Title
             </Tab>
             <Tab
               onClick={() => handleTabChange('duration')}
-              _selected={{ bg: '#007BFF', color: 'white' }}
+              _selected={{ bg: '#000080', color: 'white' }}
               _focus={{ outline: 'none' }}
             >
               Duration
             </Tab>
             <Tab
               onClick={() => handleTabChange('skill')}
-              _selected={{ bg: '#007BFF', color: 'white' }}
+              _selected={{ bg: '#000080', color: 'white' }}
               _focus={{ outline: 'none' }}
             >
               Skill
@@ -172,7 +172,7 @@ const Search = () => {
                 <option>Flutter Development</option>
                 <option>Android Development</option>
               </Select>
-              <Button onClick={searchByTitle} ml={5} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Search</Button>
+              <Button onClick={searchByTitle} ml={5} bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }}>Search</Button>
             </TabPanel>
             <TabPanel w={'full'} display={'flex'} justifyContent={'center'}>
               <Select
@@ -186,7 +186,7 @@ const Search = () => {
                 <option>10 weeks</option>
                 <option>12 weeks</option>
               </Select>
-              <Button onClick={searchByDuration} ml={5} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Search</Button>
+              <Button onClick={searchByDuration} ml={5} bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }}>Search</Button>
             </TabPanel>
             <TabPanel w={'full'} display={'flex'} justifyContent={'center'}>
               <Select
@@ -206,7 +206,7 @@ const Search = () => {
                 <option>Flutter</option>
                 <option>Android Studio</option>
               </Select>
-              <Button onClick={searchBySkill} ml={5} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>Search</Button>
+              <Button onClick={searchBySkill} ml={5} bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }}>Search</Button>
             </TabPanel>
           </TabPanels>
         </Tabs>
@@ -222,7 +222,7 @@ const Search = () => {
                 mt='30px'
                 bg="white"
                 borderRadius="10px"
-                boxShadow="2px -2px 10px black"
+                boxShadow="2px -2px 10px #000080"
               >
                 <Text fontSize="30px" fontWeight="semibold" ml="25px" paddingTop="25px">
                   {internship.Internship_title}
@@ -240,7 +240,7 @@ const Search = () => {
                   Fees: {internship.fees}<br />
                 </Text>
                 <Link to={`/details/${internship.id}`}>
-                  <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#49BBBD" paddingTop="10px">
+                  <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#9acd32" paddingTop="10px">
                     View details
                   </Text>
                 </Link>

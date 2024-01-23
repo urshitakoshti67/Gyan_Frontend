@@ -76,7 +76,7 @@ const Home = () => {
       <Heading margin="" size="2xl" ml="80px" paddingBottom="15px">
         <HStack>
           <Box><Text>Develop </Text></Box>
-          <Box><Text color="#5FBEC0" paddingTop="0px">Skills</Text> </Box>
+          <Box><Text color="#9acd32" paddingTop="0px">Skills</Text> </Box>
         </HStack>
         <Text>from the <u>best source</u>...</Text>
       </Heading>
@@ -105,7 +105,7 @@ const Home = () => {
                   mt='30px'
                   bg="white"
                   borderRadius="10px"
-                  boxShadow="2px -2px 10px black"
+                  boxShadow="2px -2px 10px #000080"
                 >
                   <Text fontSize="30px" fontWeight="semibold" ml="25px" paddingTop="25px">
                     {internship.Internship_title}
@@ -123,7 +123,7 @@ const Home = () => {
                     Fees: {internship.fees}<br />
                   </Text>
                   <Link to={`/details/${internship.id}`}>
-                    <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#49BBBD" paddingTop="10px">
+                    <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#9acd32" paddingTop="10px">
                       View details
                     </Text>
                   </Link>
@@ -151,7 +151,7 @@ const Home = () => {
               mt='30px'
               bg="white"
               borderRadius="10px"
-              boxShadow="2px -2px 10px black"
+              boxShadow="2px -2px 10px #000080"
             >
               <Text fontSize="30px" fontWeight="semibold" ml="25px" paddingTop="25px">
                 {internship.Internship_title}
@@ -169,7 +169,7 @@ const Home = () => {
                 Fees: {internship.fees}<br />
               </Text>
               <Link to={`/details/${internship.id}`}>
-                <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#49BBBD" paddingTop="10px">
+                <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#9acd32" paddingTop="10px">
                   View details
                 </Text>
               </Link>

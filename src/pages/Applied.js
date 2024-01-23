@@ -53,7 +53,7 @@ const Applied = () => {
                 mt='30px'
                 bg="white"
                 borderRadius="10px"
-                boxShadow="2px -2px 10px black"
+                boxShadow="2px -2px 10px #000080"
               >
                 <Text fontSize="30px" fontWeight="semibold" ml="25px" paddingTop="25px">
                   {index + 1}.{item.Internship_title}
@@ -71,18 +71,18 @@ const Applied = () => {
                   Fees: {index + 1}.{item.fees}<br />
                 </Text>
                 <Link to={`/details/${item.id}`}>
-                  <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#49BBBD" paddingTop="10px">
+                  <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#9acd32" paddingTop="10px">
                     View details .
                   </Text>
                 </Link>
                 <Button
-                  bg="#49BBBD"
+                  bg="#000080"
                   w="200px"
                   h="35px"
                   ml="40px"
                   marginTop="8px"
                   borderRadius="11px"
-                  _hover={{ bg: '#3a9597' }}
+                  _hover={{ bg: '#9acd32' }}
                   onClick={async () => {
                     try {
                       const accessToken = window.sessionStorage.getItem('accessToken');

@@ -67,7 +67,7 @@ const ChangePassword = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     type='password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -85,12 +85,12 @@ const ChangePassword = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     type='password'
                     value={password2}
                     onChange={(e) => setPassword2(e.target.value)}
                 />
-                <Button mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} onClick={changePassword}>
+                <Button mt={10} bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }} onClick={changePassword}>
                     Update
                 </Button>
             </Box>

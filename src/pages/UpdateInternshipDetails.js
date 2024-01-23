@@ -108,7 +108,7 @@ const UpdateInternshipDetails = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
@@ -125,7 +125,7 @@ const UpdateInternshipDetails = () => {
                         size="sm"
                         borderRadius="100"
                         borderWidth="medium"
-                        borderColor="#49BBBD"
+                        borderColor="#9acd32"
                         value={completionCertificate}
                         readOnly
                     />
@@ -151,7 +151,7 @@ const UpdateInternshipDetails = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     value={duration}
                     onChange={(e) => setDuration(e.target.value)}
                 />
@@ -168,7 +168,7 @@ const UpdateInternshipDetails = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     value={fees}
                     onChange={(e) => setFees(e.target.value)}
                 />
@@ -185,7 +185,7 @@ const UpdateInternshipDetails = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     value={type}
                     onChange={(e) => setType(e.target.value)}
                 />
@@ -202,7 +202,7 @@ const UpdateInternshipDetails = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     value={keySkills}
                     onChange={(e) => setKeySkills(e.target.value)}
                 />
@@ -219,7 +219,7 @@ const UpdateInternshipDetails = () => {
                         size="sm"
                         borderRadius="100"
                         borderWidth="medium"
-                        borderColor="#49BBBD"
+                        borderColor="#9acd32"
                         value={LOR}
                         readOnly
                     />
@@ -245,7 +245,7 @@ const UpdateInternshipDetails = () => {
                         size="sm"
                         borderRadius="100"
                         borderWidth="medium"
-                        borderColor="#49BBBD"
+                        borderColor="#9acd32"
                         value={paperWriting}
                         readOnly
                     />
@@ -271,7 +271,7 @@ const UpdateInternshipDetails = () => {
                     size="sm"
                     borderRadius="100"
                     borderWidth="medium"
-                    borderColor="#49BBBD"
+                    borderColor="#9acd32"
                     type='number'
                     value={projectCount}
                     onChange={(e) => setProjectCount(e.target.value)}

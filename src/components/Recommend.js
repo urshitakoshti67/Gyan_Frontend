@@ -49,7 +49,7 @@ const Recommend = ({ name }) => {
       Recommended for you
     </Text>
     <Spacer />
-    <Text color='#49BBBD' fontSize={['md', 'md', 'lg']} mt={['16', '16', '10']}>
+    <Text color='#9acd32' fontSize={['md', 'md', 'lg']} mt={['16', '16', '10']}>
       see all
     </Text>
   </Flex>

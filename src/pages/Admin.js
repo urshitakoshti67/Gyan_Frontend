@@ -62,12 +62,12 @@ const Admin = () => {
       <NavBar isAdmin={isAdmin} />
       <Flex direction="column" align="center" justify="center">
         <Box justifyContent="center" px="10" py='6' border="1px" borderColor={'facebook.300'} borderRadius={'12'} bg='gray.300'>
-          <Button mb='2' bg='facebook.500' color='white' _hover={{ color: 'black', bg: 'facebook.300' }} mr={5} onClick={() => { navigate('/applications') }}>View All Applications</Button>
-          <Button mb='2' bg='facebook.500' color='white' _hover={{ color: 'black', bg: 'facebook.300' }} onClick={() => { navigate('/internshipDetails') }}>View Internship Details</Button>
+          <Button mb='2' bg='facebook.500' color='white' _hover={{ color: '#000080', bg: 'facebook.300' }} mr={5} onClick={() => { navigate('/applications') }}>View All Applications</Button>
+          <Button mb='2' bg='facebook.500' color='white' _hover={{ color: '#000080', bg: 'facebook.300' }} onClick={() => { navigate('/internshipDetails') }}>View Internship Details</Button>
 
           <Divider px='-10' mr='20' />
           <FormControl onSubmit={handleSubmit}>
-            <FormLabel htmlFor="csvInput" color={'black'}>Upload CSV</FormLabel>
+            <FormLabel htmlFor="csvInput" color={'#000080'}>Upload CSV</FormLabel>
             <Input
               type="file"
               id="csvInput"

@@ -42,7 +42,7 @@ const ViewApplication = () => {
                             pb='30px'
                             bg="white"
                             borderRadius="10px"
-                            boxShadow="2px -2px 10px black"
+                            boxShadow="2px -2px 10px #000080"
                         >
                             <Text fontSize="30px" fontWeight="semibold" ml="25px" paddingTop="25px">
                                 {item.internship.Internship_title}

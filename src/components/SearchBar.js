@@ -76,7 +76,7 @@ const SearchBar = () => {
             flexGrow="1"
           />
           <Button
-            bgColor="#49BBBD"
+            bgColor="#9acd32"
             right="0.5"
             p='2'
             mt='1'

@@ -2,7 +2,8 @@
     transition: background-color .3s, box-shadow .3s;
 
     padding: 12px 16px 12px 42px;
-    border: 0.5px solid #757575;
+        background-color:#9acd32 ;
+        border: 0.5px solid ;
     border-radius: 20px;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
 
@@ -23,7 +24,7 @@
     }
 
     &:active {
-        background-color: #eeeeee;
+        background-color:#9acd32 ;
     }
 
     &:focus {
@@ -31,7 +32,7 @@
         box-shadow:
             0 -1px 0 rgba(0, 0, 0, .04),
             0 2px 4px rgba(0, 0, 0, .25),
-            0 0 0 3px #c8dafc;
+            0 0 0 3px #9acd32;
     }
 
     &:disabled {

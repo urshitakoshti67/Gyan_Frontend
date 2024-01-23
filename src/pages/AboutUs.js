@@ -24,12 +24,12 @@ const AboutUs = () => {
           width={['100%', '100%', '33%']}
           as="u"
           fontSize={['xl', '2xl', '2xl']}
-          // color="#02A4FF"
+          // color="#000080"
           textAlign={['center', 'center', 'left']}
           mb={['4', '4', '0']} // Add margin-bottom for spacing between Text and Image
           textDecoration={'none'}
         >
-          <Text mt='10' fontSize="3xl" fontWeight={'semibold'}>
+          <Text mt='10' fontSize="3xl" fontWeight={'semibold'} color="#000080">
             About Us
           </Text>
           We believe in fostering the next generation of talent. Our internship program is more than just an opportunity - it's a gateway to hands-on experience, mentorship, and a vibrant community that values innovation, growth, and diversity.
@@ -46,8 +46,8 @@ const AboutUs = () => {
       </Flex>
 
       <div>
-        <Box bgColor="#BFDEFF" mt="10">
-          <Heading p="12" fontSize="3xl">
+        <Box bgColor="#000080" mt="10">
+          <Heading p="12" fontSize="3xl" color="white">
             Our Master Trainer
           </Heading>
           <Center>
@@ -63,8 +63,8 @@ const AboutUs = () => {
             />
           </Center>
         </Box>
-        <Box bgColor="#BFDEFF" mt="10">
-          <Heading p="12" fontSize="3xl">
+        <Box bgColor="#000080" mt="10">
+          <Heading p="12" fontSize="3xl" color="white">
             Our Ambassador
           </Heading>
           <Center>

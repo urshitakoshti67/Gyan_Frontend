@@ -77,10 +77,10 @@ const Register = () => {
         </Box>
 
         <Box w='550px' padding={'20px'} backgroundColor={'#E4FFFF'} borderRadius={'25px'}>
-          <Heading textAlign={'left'}><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#2F327D">Welcome to </Heading><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#00CBB8">Gyan@Aim4u</Heading></Heading>
+          <Heading textAlign={'left'}><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#2F327D">Welcome to </Heading><Heading as="span" size={{ base: "base", md: "md", lg: "xl" }} color="#9acd32">Gyan@Aim4u</Heading></Heading>
 
           <HStack spacing='4px'>
-            <Heading color={'#F48C06'} size={{ base: "base", md: "sm", lg: "sm" }}>Lets get you started</Heading>
+            <Heading color={'#9acd32'} size={{ base: "base", md: "sm", lg: "sm" }}>Lets get you started</Heading>
           </HStack>
 
           <br />
@@ -183,7 +183,7 @@ const Register = () => {
               w='450px'
               h='40px'
               borderRadius='25px'
-              bg='#007BFF'
+              bg='#000080'
               color='white'
               _hover={{ bg: 'rgba(45, 240, 228, 1)', cursor: 'pointer' }}
               _active={{ bg: 'rgba(45, 240, 228, 1)' }}
@@ -204,7 +204,7 @@ const Register = () => {
             Sign in with Google
           </button>
           <Text textAlign={'center'} mt='2%' fontSize='14px' fontWeight='bold'>
-            Already Have an Account? <Link to='/login'><span style={{ color: '#007BFF' }}>Login</span></Link>
+            Already Have an Account? <Link to='/login'><span style={{ color: '#000080' }}>Login</span></Link>
           </Text> */}
         </Box>
       </HStack>

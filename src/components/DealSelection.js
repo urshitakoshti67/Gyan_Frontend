@@ -22,7 +22,7 @@ const DealsSection = () => {
           Top Education offers and deals are listed here
         </Text>
         <Spacer />
-        <Text color='#49BBBD' fontSize={['md', 'md', 'lg']}>
+        <Text color='#9acd32' fontSize={['md', 'md', 'lg']}>
           see all
         </Text>
         </Flex>
@@ -50,7 +50,7 @@ const DealsSection = () => {
                 boxSize={['16', '16', '20']}
                 mb={['16', '16', '32']}
                 borderRadius='15px'
-                bg='#49BBBD'
+                bg='#9acd32'
                 textAlign='center'
                 fontSize={['2xl', '2xl', '4xl']}
                 display="flex"

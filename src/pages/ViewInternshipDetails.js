@@ -38,7 +38,7 @@ const ViewInternshipDetails = () => {
                     pb={10}
                     bg="white"
                     borderRadius="10px"
-                    boxShadow="2px -2px 10px black"
+                    boxShadow="2px -2px 10px #000080"
                 >
                     <Text fontSize="30px" fontWeight="semibold" ml="25px" paddingTop="25px">
                         {internship.Internship_title}
@@ -64,7 +64,7 @@ const ViewInternshipDetails = () => {
                         Project Count: {internship.project_count} <br />
                     </Text>
                     <Link to={`/updateDetails/${internship.id}`}>
-                        <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#49BBBD" paddingTop="10px">
+                        <Text fontSize="14px" cursor={'pointer'} fontWeight="semibold" ml="25px" color="#9acd32" paddingTop="10px">
                             Edit details
                         </Text>
                     </Link>

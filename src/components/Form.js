@@ -75,7 +75,7 @@ const Form = () => {
               borderRadius="15px"
               alt="PayPal"
               onClick={() => handleImageClick('PayPal')}
-              _hover={{ border: '2px', borderColor: '#49BBBD' }}
+              _hover={{ border: '2px', borderColor: '#9acd32' }}
             />
             <Image
               src={card2}
@@ -86,7 +86,7 @@ const Form = () => {
               borderRadius="15px"
               alt="American Express"
               onClick={() => handleImageClick('American Express')}
-              _hover={{ border: '2px', borderColor: '#49BBBD' }}
+              _hover={{ border: '2px', borderColor: '#9acd32' }}
             />
             <Image
               src={card3}
@@ -97,7 +97,7 @@ const Form = () => {
               borderRadius="15px"
               alt="Visa"
               onClick={() => handleImageClick('Visa')}
-              _hover={{ border: '2px', borderColor: '#49BBBD' }}
+              _hover={{ border: '2px', borderColor: '#9acd32' }}
             />
             <Image
               src={card4}
@@ -108,7 +108,7 @@ const Form = () => {
               borderRadius="15px"
               alt="Mastercard"
               onClick={() => handleImageClick('MasterCard')}
-              _hover={{ border: '2px', borderColor: '#49BBBD' }}
+              _hover={{ border: '2px', borderColor: '#9acd32' }}
             />
           </Flex>
           <FormHelperText textAlign="center" fontSize="lg">

@@ -271,7 +271,7 @@ const Profile = () => {
             size="sm"
             borderRadius="100"
             borderWidth="medium"
-            borderColor="#49BBBD"
+            borderColor="#9acd32"
             value={Fname}
             onChange={(e) => setFName(e.target.value)}
           />
@@ -288,7 +288,7 @@ const Profile = () => {
             size="sm"
             borderRadius="100"
             borderWidth="medium"
-            borderColor="#49BBBD"
+            borderColor="#9acd32"
             value={Lname}
             onChange={(e) => setLName(e.target.value)}
           />
@@ -305,7 +305,7 @@ const Profile = () => {
             size="sm"
             borderRadius="100"
             borderWidth="medium"
-            borderColor="#49BBBD"
+            borderColor="#9acd32"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
@@ -329,11 +329,11 @@ const Profile = () => {
               size="sm"
               borderRadius="100"
               borderWidth="medium"
-              borderColor="#49BBBD"
+              borderColor="#9acd32"
               value={singleSkill}
               onChange={(e) => setSingleSkill(e.target.value)}
             />
-            <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
+            <Button bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }} ml={2} onClick={() => {
               let temp = skills;
               temp.push(singleSkill);
               setSkills(temp);
@@ -360,18 +360,18 @@ const Profile = () => {
               size="sm"
               borderRadius="100"
               borderWidth="medium"
-              borderColor="#49BBBD"
+              borderColor="#9acd32"
               value={edu}
               onChange={(e) => setEdu(e.target.value)}
             />
-            <Button bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }} ml={2} onClick={() => {
+            <Button bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }} ml={2} onClick={() => {
               let temp = education;
               temp.push(edu);
               setEducation(temp);
               setEdu('')
             }}>Add</Button>
           </Box>
-          <Button onClick={handleUpdate} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
+          <Button onClick={handleUpdate} mt={10} bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }}>
             Update
           </Button>
         </Box>
@@ -389,12 +389,12 @@ const Profile = () => {
             size="sm"
             borderRadius="100"
             borderWidth="medium"
-            borderColor="#49BBBD"
+            borderColor="#9acd32"
             type='file'
             accept='.pdf,.doc,.docx'
             onChange={handleFileChange}
           />
-          <Button onClick={uploadResume} mt={10} bg={'#007BFF'} color={'white'} _hover={{ bg: '#49BBBD' }}>
+          <Button onClick={uploadResume} mt={10} bg={'#000080'} color={'white'} _hover={{ bg: '#9acd32' }}>
             Upload Resume
           </Button>
         </Box>

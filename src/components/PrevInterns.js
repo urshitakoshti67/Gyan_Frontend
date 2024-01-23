@@ -51,7 +51,7 @@ const PrevInterns = () => {
         Some of our previous interns
       </Text>
       <Spacer />
-      <Text color="#49BBBD" fontSize={['md', 'md', 'lg']}>
+      <Text color="#9acd32" fontSize={['md', 'md', 'lg']}>
         see all
       </Text>
     </Flex>

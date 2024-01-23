@@ -7,7 +7,7 @@ import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
 const Footer = () => {
   return (
     <div>
-      <Flex bgColor="#252641" color="white" h='75px' pl='0' justifyContent="space-between" alignItems="center">
+      <Flex bgColor="#252641" color="white" h='20px' pl='0' justifyContent="space-between" alignItems="center"  width="0%" >
         <Flex>
           <Text mt='20' mx='10' fontSize='3xl'>Explore</Text>
           <Text mt='20' mx='100' fontSize='3xl'>Contact</Text>
