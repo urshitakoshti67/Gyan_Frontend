@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
-import logo from '../images/aim4u_logo.jpg';
+import logo from "../images/AiM4u Registered Logo (1).png";
 import { Link } from 'react-router-dom';
 import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
 
@@ -15,7 +15,9 @@ const Footer = () => {
           <Text mt='20' mx='10' fontSize='3xl'>Legal</Text>
         </Flex>
         {/* Add an image in the right corner */}
+        <Link to="https://www.aim4u.co.in/#/gyan-at-aim4u">
         <Image src={logo} alt="Logo" w="400px" h="auto" position="absolute" bottom="100" left="1000"/>
+        </Link>
       </Flex>
       <Flex direction='row' bgColor="#252641" color="white" h='sm'>
         <Flex direction='column' mt='16' mx='10'>

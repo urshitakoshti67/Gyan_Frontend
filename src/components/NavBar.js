@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import img10 from "../images/aim4u_logo.jpg"
+import img10 from "../images/AiM4u Registered Logo (1).png"
 const Navbar = ({ isAdmin }) => {
   const toast = useToast();
   const { userId } = useSelector((state) => { return state.user });
@@ -30,7 +30,9 @@ const Navbar = ({ isAdmin }) => {
       flexWrap="wrap"
       backgroundColor='white'
     >
+      <Link to="https://www.aim4u.co.in/#/gyan-at-aim4u">
       <Image src={img10} w={'7rem'} />
+      </Link>
       <Heading alignSelf={'center'}>Gyan</Heading>
       <Spacer />
 
